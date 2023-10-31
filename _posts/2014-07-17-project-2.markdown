@@ -1,7 +1,7 @@
 ---
 layout: default
 modal-id: 2
-date: 2023 Fall ~ Current
+date: 2014-07-15
 img: thereminPic.png
 alt: image-alt
 project-date: Fall 2023
