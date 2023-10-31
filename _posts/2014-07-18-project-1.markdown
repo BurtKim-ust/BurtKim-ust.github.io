@@ -1,7 +1,7 @@
 ---
 layout: default
 modal-id: 1
-date: 2023 Fall ~ Current
+date: 2014-07-15
 img: mudbugRaspberry1.png
 alt: image-alt
 project-date: Fall 2023
