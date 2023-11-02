@@ -5,7 +5,7 @@ date: 2023-07-16
 img: diaryAppLogIn.png
 alt: image-alt
 project-date: Summer 2023
-client: Start Bootstrap
+client: Personal Project
 category: Application Development
 description: I designed an application enabling user communication through postcards and diary sharing, utilizing Google Firebase Cloud API and Expo. Key features encompassed customizable backgrounds, attaching photos, search bars, friend requests, privacy settings, and universal post visibility [Developed using React Native]. Application deisgn, front-end, and back-end were done by Burt Kim.
 ---
