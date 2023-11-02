@@ -1,11 +1,11 @@
 ---
 layout: default
-modal-id: LED Game with Digital Logic Design
+modal-id: 5
 date: 2021-05-14
 img: miniGameProject.png
 alt: image-alt
 project-date: May 2021
 client: Personal Project
-category: Circuit Designing
+category: LED Game with Digital Logic Design
 description: I designed and implemented a system that allows users to control the horizontal movement of a descending light using a press switch. This project was executed using a combination of Logisim for digital circuit design and TinkerCAD for simulation and testing purposes.
 ---
