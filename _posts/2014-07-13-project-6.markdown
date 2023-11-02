@@ -2,7 +2,7 @@
 layout: default
 modal-id: 6
 date: 2020-11-20
-img: windTurbineSimulationPic.png
+img: windTurbineSimulation.png
 alt: image-alt
 project-date: December 2020
 client: Start Bootstrap
