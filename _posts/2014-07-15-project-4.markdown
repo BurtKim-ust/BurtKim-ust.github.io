@@ -1,11 +1,11 @@
 ---
 layout: default
-modal-id: Wirelessly Controlable Robot
+modal-id: 4
 date: 2020-11-20
 img: robokitPic.png
 alt: image-alt
 project-date: November 2020
 client: Personal Project
-category: Robotics
+category: Wirelessly Controlable Robot
 description: This robot is equipped with a Wi-Fi module connected to an Arduino, enabling it to establish a connection to the internet. Additionally, it features a front-facing sensor capable of accurately measuring the distance between the robot and its surroundings. This setup allows for seamless operation, as all commands can be initiated directly from a laptop by simply clicking buttons on the interface.
 ---
