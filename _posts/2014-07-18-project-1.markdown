@@ -5,7 +5,7 @@ date: 2023-10-31
 img: mudbugRaspberry1.png
 alt: image-alt
 project-date: Fall 2023
-client: American Farmers
-category: The IoT Project in CU MUDBUG Team
-description: Network Development with Firebase API
+client: Group Prjoect(MUDBUG Club)
+category: The IoT Project
+description: I am currently engaged in the development of both hardware and software components aimed at creating a resilient LORAWAN network connecting Arduino devices and Raspberry Pi. In the upcoming phase, I will enable the Raspberry Pi to upload data to Firebase. The overarching goal of our club is to empower American farmers by providing them with the ability to remotely monitor soil quality, facilitate automatic plant watering, and generate insightful data pertaining to composts and bacteria—all while operating on low energy consumption. Additionally, we are exploring the integration of renewable energy sources, like solar energy, into our system. It's worth noting that this project is still in progress.
 ---
