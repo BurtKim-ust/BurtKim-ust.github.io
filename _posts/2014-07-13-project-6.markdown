@@ -5,7 +5,7 @@ date: 2020-11-20
 img: windTurbineSimulation.png
 alt: image-alt
 project-date: December 2020
-client: Start Bootstrap
+client: Group Project(Two People)
 category: 3D Modeling and Simulation
 description: I have developed a remarkable structure designed to significantly enhance the energy generation capabilities of small wind turbines. The 3D models were deisnged by using AutoCAD, and the models were thoroughly validated through simulations conducted using SOLIDWORKS FLOW SIMULATION. It increased the wind turbine's energy generation capability by over 70 percent accodring to the simulations.
 ---
