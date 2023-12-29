@@ -18,7 +18,9 @@
             <img src="img/portfolio/{{ post.img }}" class="img-responsive img-centered" alt="{{ post.alt }}">
             {% if post.description %}
             <p>{{ post.description }}</p>
-            <video src="https://blog.naver.com/hch1131/223307167027" controls="controls" style="max-width: 730px;"></video>
+            {% if post.title == "PROJECT 2" %}
+              <video src="https://blog.naver.com/hch1131/223307167027" controls="controls" style="max-width: 730px;"></video>
+            {% endif %}
             {% endif %}
             <ul class="list-inline item-details">
               {% if post.client %}
