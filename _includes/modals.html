@@ -1,3 +1,9 @@
+<!-- Include jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+<!-- Include YouTube IFrame API -->
+<script src="https://www.youtube.com/iframe_api"></script>
+
 <!-- Portfolio Modals -->
 {% for post in site.posts %}
   <div class="portfolio-modal modal fade" id="portfolioModal-{{ post.modal-id }}" tabindex="-1" role="dialog" aria-hidden="true">
@@ -17,15 +23,15 @@
               {% if post.description %}
                 <p>{{ post.description }}</p>
                 {% if post.title == "Project 2" %}
-                  <iframe width="680" height="383" src="https://www.youtube.com/embed/lZ2HTTFPI1c" title="Building Theremin Project" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                  <div id="player-2"></div>
                 {% elsif post.title == "Project 3" %}
-                  <iframe width="680" height="383" src="https://www.youtube.com/embed/IIHjzg5GZUY" title="Diary App Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                  <div id="player-3"></div>
                 {% elsif post.title == "Project 4" %}
-                  <iframe width="425" height="756" src="https://www.youtube.com/embed/xcsMpBHcq68" title="DLD MiniGame Project Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                  <div id="player-4"></div>
                 {% elsif post.title == "Project 5" %}
-                  <iframe width="680" height="383" src="https://www.youtube.com/embed/dRjoN5F3ecw" title="Robokit Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                  <div id="player-5"></div>
                 {% elsif post.title == "Project 6" %}
-                  <iframe width="680" height="380" src="https://www.youtube.com/embed/Xya-h9nSnFg" title="Project 6" frameborder="0" allowfullscreen></iframe>
+                  <div id="player-6"></div>
                 {% endif %}
               {% endif %}
               <ul class="list-inline item-details">
@@ -50,13 +56,23 @@
   </div>
 {% endfor %}
 
-<!-- Include jQuery -->
-<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-
 <script>
-  // Attach a listener to the modal close event
-  $('.portfolio-modal').on('hidden.bs.modal', function () {
-    // Find all iframes inside the closed modal and set their src to an empty string
-    $(this).find('iframe').attr('src', '');
-  });
+  // Initialize YouTube IFrame API
+  function onYouTubeIframeAPIReady() {
+    // Create a player for each video
+    new YT.Player('player-2', { videoId: 'lZ2HTTFPI1c', events: { 'onReady': onPlayerReady } });
+    new YT.Player('player-3', { videoId: 'IIHjzg5GZUY', events: { 'onReady': onPlayerReady } });
+    new YT.Player('player-4', { videoId: 'xcsMpBHcq68', events: { 'onReady': onPlayerReady } });
+    new YT.Player('player-5', { videoId: 'dRjoN5F3ecw', events: { 'onReady': onPlayerReady } });
+    new YT.Player('player-6', { videoId: 'Xya-h9nSnFg', events: { 'onReady': onPlayerReady } });
+  }
+
+  // Callback when a player is ready
+  function onPlayerReady(event) {
+    // Attach a listener to the modal close event
+    $('.portfolio-modal').on('hidden.bs.modal', function () {
+      // Pause the video when the modal is closed
+      event.target.pauseVideo();
+    });
+  }
 </script>
