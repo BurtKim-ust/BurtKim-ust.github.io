@@ -1,58 +1,60 @@
 <!-- Portfolio Modals -->
 {% for post in site.posts %}
-<div class="portfolio-modal modal fade" id="portfolioModal-{{ post.modal-id }}" tabindex="-1" role="dialog"
-  aria-hidden="true">
-  <div class="modal-content">
-    <div class="close-modal" data-dismiss="modal">
-      <div class="lr">
-        <div class="rl">
+  <div class="portfolio-modal modal fade" id="portfolioModal-{{ post.modal-id }}" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-content">
+      <div class="close-modal" data-dismiss="modal">
+        <div class="lr">
+          <div class="rl"></div>
         </div>
       </div>
-    </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-lg-offset-2">
-          <div class="modal-body">
-            <h2>{{ post.title }}</h2>
-            <hr class="star-primary">
-            <img src="img/portfolio/{{ post.img }}" class="img-responsive img-centered" alt="{{ post.alt }}">
-            {% if post.description %}
-            <p>{{ post.description }}</p>
-            {% if post.title == "Project 2" %}
-              <iframe width="853" height="480" src="https://www.youtube.com/embed/lZ2HTTFPI1c" title="Building Theremin Project" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            {% elsif post.title == "Project 3" %}
-              <iframe width="853" height="480" src="https://www.youtube.com/embed/IIHjzg5GZUY" title="Diary App Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            {% elsif post.title == "Project 4" %}
-              <iframe width="425" height="756" src="https://www.youtube.com/embed/xcsMpBHcq68" title="DLD MiniGame Project Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            {% elsif post.title == "Project 5" %}
-              <iframe width="853" height="480" src="https://www.youtube.com/embed/dRjoN5F3ecw" title="Robokit Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            {% elsif post.title == "Project 6" %}
-              <iframe width="680" height="380" src="https://www.youtube.com/embed/Xya-h9nSnFg" frameborder="0" allowfullscreen></iframe>
-            {% endif %}
-            {% endif %}
-            <ul class="list-inline item-details">
-              {% if post.client %}
-              <li>Client:
-                <strong>{{ post.client }}</strong>
-              </li>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2">
+            <div class="modal-body">
+              <h2>{{ post.title }}</h2>
+              <hr class="star-primary">
+              <img src="img/portfolio/{{ post.img }}" class="img-responsive img-centered" alt="{{ post.alt }}">
+              {% if post.description %}
+                <p>{{ post.description }}</p>
+                {% if post.title == "Project 2" %}
+                  <iframe width="853" height="480" src="https://www.youtube.com/embed/lZ2HTTFPI1c" title="Building Theremin Project" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                {% elsif post.title == "Project 3" %}
+                  <iframe width="853" height="480" src="https://www.youtube.com/embed/IIHjzg5GZUY" title="Diary App Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                {% elsif post.title == "Project 4" %}
+                  <iframe width="425" height="756" src="https://www.youtube.com/embed/xcsMpBHcq68" title="DLD MiniGame Project Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                {% elsif post.title == "Project 5" %}
+                  <iframe width="853" height="480" src="https://www.youtube.com/embed/dRjoN5F3ecw" title="Robokit Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                {% elsif post.title == "Project 6" %}
+                  <iframe width="680" height="380" src="https://www.youtube.com/embed/Xya-h9nSnFg" frameborder="0" allowfullscreen></iframe>
+                {% endif %}
               {% endif %}
-              {% if post.project-date %}
-              <li>Date:
-                <strong>{{ post.project-date }}</strong>
-              </li>
-              {% endif %}
-              {% if post.category %}
-              <li>Service:
-                <strong>{{ post.category }}</strong>
-              </li>
-              {% endif %}
-            </ul>
-            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i>
-              Close</button>
+              <ul class="list-inline item-details">
+                {% if post.client %}
+                  <li>Client: <strong>{{ post.client }}</strong></li>
+                {% endif %}
+                {% if post.project-date %}
+                  <li>Date: <strong>{{ post.project-date }}</strong></li>
+                {% endif %}
+                {% if post.category %}
+                  <li>Service: <strong>{{ post.category }}</strong></li>
+                {% endif %}
+              </ul>
+              <button type="button" class="btn btn-default" data-dismiss="modal" onclick="stopVideo('{{ post.title }}')">
+                <i class="fa fa-times"></i> Close
+              </button>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 {% endfor %}
+
+<script>
+  function stopVideo(title) {
+    var iframe = document.querySelector(`[title="${title}"]`);
+    if (iframe) {
+      iframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+    }
+  }
+</script>
