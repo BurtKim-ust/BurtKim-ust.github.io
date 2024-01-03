@@ -7,5 +7,5 @@ alt: image-alt
 project-date: Fall 2023
 client: Personal Project
 category: Hardware Design of Theremin Instrument
-description: A theremin is a unique musical instrument capable of producing varying pitches based on the proximity of the player's hand to the instrument. I have been diligently working on constructing the fundamental components of the theremin, including the oscillators, mixer, antennas, amplifier, and speaker. It's worth noting that this project is still in progress.
+description: A theremin is a unique musical instrument capable of producing varying pitches based on the proximity of the player's hand to the instrument. I have been diligently working on constructing the fundamental components of the theremin, including the oscillators, mixer, antennas, amplifier, and speaker.
 ---
