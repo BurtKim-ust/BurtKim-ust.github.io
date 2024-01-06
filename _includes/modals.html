@@ -52,19 +52,17 @@
     </div>
   </div>
 {% endfor %}
+<!-- Add this script at the end of your HTML body or in your JavaScript file -->
 <script>
-  // Function to pause all videos inside the modal
-  function pauseVideos() {
-    var videos = document.querySelectorAll('.portfolio-modal.modal.show iframe');
-    videos.forEach(function(video) {
-      var src = video.src;
-      video.src = '';
-      video.src = src;
+  // Wait for the document to be ready
+  document.addEventListener("DOMContentLoaded", function () {
+    // Listen for the modal hidden event
+    $('.portfolio-modal').on('hidden.bs.modal', function (e) {
+      // Pause all the iframes inside the modal
+      $(this).find('iframe').each(function () {
+        var src = $(this).attr('src');
+        $(this).attr('src', src);
+      });
     });
-  }
-
-  // Attach the function to the modal close event
-  $('.portfolio-modal').on('hidden.bs.modal', function () {
-    pauseVideos();
   });
 </script>
