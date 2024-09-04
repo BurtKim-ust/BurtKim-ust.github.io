@@ -2,7 +2,7 @@
 layout: default
 modal-id: 1
 date: 2023-10-31
-img: mudbugRaspberry1.png
+img: MudbugRaspberry1.png
 alt: image-alt
 project-date: Fall 2023 - Present
 client: Group Project (MUDBUG Club)
