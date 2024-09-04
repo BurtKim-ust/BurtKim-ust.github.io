@@ -6,6 +6,6 @@ img: Virtuoso.png
 alt: image-alt
 project-date: Spring 2024
 client: Personal Project
-category: Using Virtuoso to Develop
-description: I have conducted a comprehensive analysis of the energy and gas consumption across most areas of the Cooper Union building. Leveraging this data, I am currently developing an Energy Dashboard that provides real-time visualization of energy usage from the Building Management System (BMS). In the future, I plan to integrate various machine learning algorithms to predict future energy consumption and carbon emission rates for the building.
+category: Hardware Design
+description: I designed a CMOS amplifier using Virtuoso software, achieving a 27dB gain with a power consumption of 1.24 mW. I optimized power efficiency and voltage gain by applying current mirror concepts and adjusting CMOS chip dimensions.
 ---
