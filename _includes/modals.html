@@ -15,7 +15,7 @@
               <hr class="star-primary">
               <img src="img/portfolio/{{ post.img }}" class="img-responsive img-centered" alt="{{ post.alt }}">
               {% if post.description %}
-                <p>{{ post.description }}</p>
+                <p>{{ post.description | markdownify }}</p>
                 {% if post.title == "Project 5" %}
                   <iframe width="680" height="383" src="https://www.youtube.com/embed/lZ2HTTFPI1c" title="Building Theremin Project" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                   <div><a href="/files/Kim_Kwon_ThereminReport.pdf" target="_blank">PDF</a></div>
