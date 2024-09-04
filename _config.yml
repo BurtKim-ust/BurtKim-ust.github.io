@@ -1,5 +1,5 @@
 # Site settings
-title: Electrical Engineer & Software Developer
+title: Embedded Engineer
 email: jonghyeok.kim@cooper.edu
 url: https://burtkim-ust.github.io/
 description: "Previous or Ongoing Projects Done by Burt Kim"
@@ -52,8 +52,8 @@ social:
 
 # Postal address (add as many lines as necessary)
 address:
-  - line: 331 E 9th St.
-  - line: New York, NY 10003
+  - line: 21 Stuyvesant Oval 12E.
+  - line: New York, NY 10009
 
 # Credits content
 credits: '<a href="http://startbootstrap.com">Start Bootstrap</a>.'
