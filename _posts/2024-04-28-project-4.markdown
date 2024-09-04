@@ -2,7 +2,7 @@
 layout: default
 modal-id: 4
 date: 2024-04-28
-img: CompArchFinalPrj.webp
+img: CompArchFinalPrj.png
 alt: image-alt
 project-date: Spring 2024
 client: Group Project (Two People)
