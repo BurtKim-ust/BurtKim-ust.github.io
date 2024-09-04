@@ -1,0 +1,11 @@
+---
+layout: default
+modal-id: 6
+date: 2024-09-03
+img: buildingManagement.png
+alt: image-alt
+project-date: Summer 2024 - Present
+client: Research Intern at Cooper Union
+category: Energy Dashboard Development
+description: I have conducted a comprehensive analysis of the energy and gas consumption across most areas of the Cooper Union building. Leveraging this data, I am currently developing an Energy Dashboard that provides real-time visualization of energy usage from the Building Management System (BMS). In the future, I plan to integrate various machine learning algorithms to predict future energy consumption and carbon emission rates for the building.
+---
