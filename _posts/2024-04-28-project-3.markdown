@@ -7,5 +7,5 @@ alt: image-alt
 project-date: 2024 Spring
 client: Team Project
 category: MIPS-based RISC
-description: description: I and Tony Kwon developed a new type of computer operating system with Verilog codes. Our computer is built using 32-bit MIPS words featuring unique instruction formats. Rather than using common basic instruction formats, our computer runs based on the following basic instruction formats: "R type: instr[31:26] = OP code, instr[25:19] = rs, instr[18:12] = rt, instr[11:5] = rd, instr[4:0] = shamt" "I type: instr[31:26] = OP code, instr[25:19] = rs, instr[18:12] = rt, instr[11:0] = immediate" "J type: instr[31:26] = OP code, instr[25:0] = address."
+description: description: Tony Kwon and I developed a new type of computer operating system with Verilog codes. Our computer is built using 32-bit MIPS words featuring unique instruction formats. Rather than using common basic instruction formats, our computer runs based on the following basic instruction formats: "R type: instr[31:26] = OP code, instr[25:19] = rs, instr[18:12] = rt, instr[11:5] = rd, instr[4:0] = shamt" "I type: instr[31:26] = OP code, instr[25:19] = rs, instr[18:12] = rt, instr[11:0] = immediate" "J type: instr[31:26] = OP code, instr[25:0] = address."
 ---
