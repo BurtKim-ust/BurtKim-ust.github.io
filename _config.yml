@@ -3,8 +3,8 @@ title: Embedded/Hardware Engineer
 email: jonghyeok.kim@cooper.edu
 url: https://burtkim-ust.github.io/
 description: "Previous or Ongoing Projects Done by Burt Kim"
-keywords: "Software Development, ASIC Design, IoT Devices, and rf Analog Design"
-skills: "C++, Python, React Native, Circuit Analysis, Solidworks"
+keywords: "Software Development, ASIC Design, IoT Devices, and RF Analog Design"
+skills: "C/C++, Python, Verilog, React Native, Firebase Cloud, LTspice, SOLIDWORKS, MATLAB"
 meta_author: Kim Jonghyeok (Burt)
 
 # Google webmaster tools
@@ -52,7 +52,7 @@ social:
 
 # Postal address (add as many lines as necessary)
 address:
-  - line: 21 Stuyvesant Oval 12E.
+  - line: 21 Stuyvesant Oval.
   - line: New York, NY 10009
 
 # Credits content
