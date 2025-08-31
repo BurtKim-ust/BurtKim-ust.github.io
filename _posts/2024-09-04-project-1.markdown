@@ -5,7 +5,7 @@ date: 2023-10-31
 img: mudbugRaspberry1.png
 alt: image-alt
 project-date: Fall 2023 - April 2025
-client: Group Project (MUDBUG Club)
+client: Group Project (Kiau Technoligies)
 category: The IoT Project
 description: I involved in the development of embedded scripting, hardware, and software to establish a resilient LoRaWAN network that connects Arduino devices and Raspberry Pi. I designed the entire network system, collaborating with a talented team focused on creating sensor modules powered by solar energy. Leveraging the LoRaWAN mesh network, our sensor modules transmit data to a Raspberry Pi, which then uploads the information to Google Firebase. I also developed a mobile app that tracks all the module devices deployed on farms, offering real-time and historical data visualization, including graphing functions. The primary goal of our project is to empower American farmers by enabling them to remotely monitor soil quality, automate plant watering, and generate valuable insights on compost and bacterial activity—all with minimal energy consumption. We also set up renewable energy sources, such as solar power, to further enhance the system's sustainability.
 
