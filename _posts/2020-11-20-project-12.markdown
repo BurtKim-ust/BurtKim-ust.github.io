@@ -2,6 +2,7 @@
 layout: default
 modal-id: 12
 date: 2020-11-20
+title: Robokit
 img: robokitPic.png
 alt: image-alt
 project-date: November 2020
