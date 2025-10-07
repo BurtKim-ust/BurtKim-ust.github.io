@@ -2,6 +2,7 @@
 layout: default
 modal-id: 11
 date: 2021-05-14
+title: miniGame
 img: miniGameProject.png
 alt: image-alt
 project-date: May 2021
