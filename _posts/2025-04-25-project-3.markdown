@@ -1,0 +1,12 @@
+---
+layout: default
+modal-id: 3
+date: 2025-04-25
+img: DLL.png
+alt: image-alt
+project-date: Spring 2025
+client: Invidividual Project
+category: Verilog Project
+description: I designed a 41.2dB operational amplifier with 61.4° phase margin and 5.1GHz unity gain frequency for integration into on-chip RF systems including LNA, transformer, mixer, oscillator, and external antenna interface. I have utilized TSMC 65nm libraries to design and construct components across 9 layers, achieving synthesis/timing clean layout with zero DRC and LVS errors, demonstrating strong analytical skills in meeting precise specifications.
+
+---
