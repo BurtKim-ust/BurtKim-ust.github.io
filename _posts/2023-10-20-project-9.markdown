@@ -1,7 +1,7 @@
 ---
 layout: default
 modal-id: 9
-title: Project 9
+title: Theremin
 date: 2023-10-20
 img: thereminPic.png
 alt: image-alt
