@@ -2,7 +2,7 @@
 layout: default
 modal-id: 4
 date: 2025-03-20
-img: Two_stage_opamp.png
+img: Two_stage_opamp.jpg
 alt: image-alt
 project-date: Spring 2025
 client: Individual Project
