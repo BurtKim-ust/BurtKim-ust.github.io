@@ -1,0 +1,11 @@
+---
+layout: default
+modal-id: 4
+date: 2025-03-20
+img: Two_stage_opamp.png
+alt: image-alt
+project-date: Spring 2025
+client: Individual Project
+category: Virtuoso Project
+description: I designed a 41.2 dB operational amplifier with a 61.4° phase margin and a 5.1 GHz unity-gain frequency for integration into on-chip RF systems, including the LNA, transformer, mixer, oscillator, and external antenna interface. Using TSMC’s 65 nm process libraries, I developed and constructed components across nine metal layers, achieving a synthesis- and timing-clean layout with zero DRC and LVS errors. This project demonstrated my strong analytical ability and precision in meeting rigorous performance and design specifications.
+---
