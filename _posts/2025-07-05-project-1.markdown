@@ -2,7 +2,7 @@
 layout: default
 modal-id: 1
 date: 2025-07-05
-img: Thesis.png
+img: Thesis.jpg
 alt: image-alt
 project-date: Summer 2025 - Spring 2026
 client: Individual Project
