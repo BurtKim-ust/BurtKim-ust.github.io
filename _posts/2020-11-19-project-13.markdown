@@ -2,6 +2,7 @@
 layout: default
 modal-id: 13
 date: 2020-11-19
+title: windTurbine
 img: windTurbineSimulation.png
 alt: image-alt
 project-date: December 2020
