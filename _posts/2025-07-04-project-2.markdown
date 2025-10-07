@@ -1,0 +1,11 @@
+---
+layout: default
+modal-id: 2
+date: 2025-07-04
+img: LGE_Intern.png
+alt: image-alt
+project-date: Summer 2025
+client: Group Project (LG Electronics)
+category: The IoT Project
+description: I was selected as the Best LGE Intern (Summer 2025) for my high-impact work on platform development, which demonstrated exceptional analytical and problem-solving skills. During the internship, I developed and debugged embedded OS components in a Linux environment using C, Python, and GCP, integrating LCD, OSP, mainboard, and Wi-Fi systems to enable upgradeability and remote control in smart electronics. I also applied systematic debugging methodologies and strong analytical reasoning to resolve complex hardware–software interface issues and optimize timing-critical embedded applications, resulting in improved system stability and performance.
+---
