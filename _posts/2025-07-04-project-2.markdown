@@ -2,7 +2,7 @@
 layout: default
 modal-id: 2
 date: 2025-07-04
-img: LGE_Intern.png
+img: LGE_Intern.jpg
 alt: image-alt
 project-date: Summer 2025
 client: Group Project (LG Electronics)
