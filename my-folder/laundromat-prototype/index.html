@@ -93,6 +93,7 @@
         let rotationX = -0.4;
         let rotationY = 0.6;
         let zoom = 1;
+        let doorSound;
         
         let nycOutline = [];
         let laundryDots = [];
@@ -101,6 +102,18 @@
         function setup() {
             let canvas = createCanvas(900, 700, WEBGL);
             canvas.parent('canvasContainer');
+            
+            // Use HTML5 Audio with correct GitHub raw URL
+            doorSound = new Audio('https://raw.githubusercontent.com/BurtKim-ust/DataVisualization/main/laundromat-prototype/washing_machine.mp3');
+            doorSound.volume = 0.5; // 50% volume
+            
+            doorSound.addEventListener('error', (e) => {
+                console.error('Error loading audio file:', e);
+            });
+            
+            doorSound.addEventListener('canplaythrough', () => {
+                console.log('Audio file loaded successfully!');
+            });
             
             generateNYCOutline();
             
@@ -125,7 +138,19 @@
             
             // Event listeners
             document.getElementById('toggle-door').addEventListener('click', () => {
+                let previousAngle = targetDoorAngle;
                 targetDoorAngle = targetDoorAngle === 0 ? 120 : 0;
+                
+                // Play sound when opening the door (going from 0 to 120)
+                if (previousAngle === 0 && targetDoorAngle === 120) {
+                    console.log('Attempting to play sound...');
+                    if (doorSound) {
+                        doorSound.currentTime = 0; // Reset to beginning
+                        doorSound.play()
+                            .then(() => console.log('Sound playing!'))
+                            .catch(err => console.error('Error playing sound:', err));
+                    }
+                }
             });
             
             document.getElementById('reset-view').addEventListener('click', () => {
