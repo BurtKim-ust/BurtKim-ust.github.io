@@ -151,6 +151,14 @@
                             .catch(err => console.error('Error playing sound:', err));
                     }
                 }
+                // Stop sound when closing the door (going from 120 to 0)
+                else if (previousAngle === 120 && targetDoorAngle === 0) {
+                    console.log('Stopping sound...');
+                    if (doorSound && !doorSound.paused) {
+                        doorSound.pause();
+                        doorSound.currentTime = 0; // Reset to beginning
+                    }
+                }
             });
             
             document.getElementById('reset-view').addEventListener('click', () => {
