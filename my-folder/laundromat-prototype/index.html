@@ -5,178 +5,459 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Laundromat Convergence - 3D Installation Prototype</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
-        body {
+        * {
             margin: 0;
-            padding: 20px;
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            background: #f5f5f5;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fafafa;
+            color: #1a1a1a;
+            font-weight: 300;
+            letter-spacing: 0.3px;
+            line-height: 1.8;
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 50vh;
             display: flex;
             flex-direction: column;
+            justify-content: center;
             align-items: center;
+            padding: 80px 20px 60px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #ffffff 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                linear-gradient(90deg, transparent 0%, rgba(44, 90, 160, 0.03) 50%, transparent 100%);
+            pointer-events: none;
         }
         
         h1 {
-            font-size: 32px;
-            margin-bottom: 20px;
-            margin-top: 30px;
-            color: #2c3e50;
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(32px, 5vw, 56px);
+            font-weight: 600;
+            letter-spacing: 3px;
             text-align: center;
-            font-weight: bold;
-            letter-spacing: 0.5px;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
         }
         
-        .intro-section {
-            max-width: 900px;
+        .subtitle-hero {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(16px, 2vw, 20px);
+            font-style: italic;
+            color: #666;
+            text-align: center;
+            max-width: 600px;
+            letter-spacing: 1px;
+        }
+        
+        /* Content Container */
+        .content-wrapper {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        
+        /* Section Styling */
+        .narrative-section {
+            margin: 80px auto;
+            padding: 60px;
             background: white;
-            padding: 40px;
+            border-radius: 2px;
+            box-shadow: 0 4px 30px rgba(0,0,0,0.06);
+            position: relative;
+        }
+        
+        .narrative-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 40px;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(180deg, 
+                transparent 0%, 
+                #2c5aa0 10%, 
+                #2c5aa0 90%, 
+                transparent 100%);
+        }
+        
+        /* Lead Paragraph */
+        .lead-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            font-style: italic;
+            color: #2c5aa0;
+            margin-bottom: 40px;
+            line-height: 1.6;
+            padding-left: 30px;
+            border-left: 3px solid #2c5aa0;
+        }
+        
+        /* Body Text */
+        .narrative-section p {
+            font-size: 17px;
             margin-bottom: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
-            line-height: 1.8;
+            line-height: 1.9;
             color: #333;
         }
         
-        .intro-section p {
-            margin-bottom: 20px;
-            font-size: 16px;
-        }
-        
-        .intro-section p:first-of-type {
-            font-size: 18px;
-            font-weight: 500;
-            color: #2c5aa0;
-        }
-        
-        .intro-section strong {
-            color: #2c5aa0;
+        .narrative-section strong {
             font-weight: 600;
+            color: #2c5aa0;
         }
         
-        .image-placeholder {
-            background: #e8e8e8;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 4px;
-            text-align: center;
-            color: #666;
+        /* Pull Quote */
+        .pull-quote {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
             font-style: italic;
-            border: 2px dashed #ccc;
+            font-weight: 600;
+            color: #2c5aa0;
+            text-align: center;
+            margin: 60px 0;
+            padding: 40px 60px;
+            position: relative;
+            line-height: 1.5;
         }
         
-        .subtitle {
+        .pull-quote::before,
+        .pull-quote::after {
+            content: '"';
+            font-size: 80px;
+            position: absolute;
+            opacity: 0.2;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .pull-quote::before {
+            top: 0;
+            left: 10px;
+        }
+        
+        .pull-quote::after {
+            content: '"';
+            bottom: -20px;
+            right: 10px;
+        }
+        
+        /* Image Container */
+        .image-container {
+            margin: 50px 0;
+            position: relative;
+            overflow: hidden;
+            border-radius: 2px;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.12);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .image-container:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 50px rgba(0,0,0,0.15);
+        }
+        
+        .image-container img {
+            width: 100%;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .image-container:hover img {
+            transform: scale(1.02);
+        }
+        
+        .image-caption {
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
             color: #666;
-            margin-bottom: 20px;
-            font-size: 14px;
-            line-height: 1.6;
-            max-width: 900px;
+            margin-top: 15px;
             text-align: center;
         }
         
+        /* Section Divider */
+        .section-divider {
+            width: 100%;
+            max-width: 1000px;
+            margin: 100px auto;
+            text-align: center;
+            position: relative;
+        }
+        
+        .section-divider::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, 
+                transparent 0%, 
+                #2c5aa0 20%, 
+                #2c5aa0 80%, 
+                transparent 100%);
+        }
+        
+        .section-divider-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #2c5aa0;
+            background: #fafafa;
+            padding: 0 30px;
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Interactive Installation Section */
+        .installation-header {
+            text-align: center;
+            margin: 80px 0 40px;
+        }
+        
+        .installation-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+        }
+        
+        .installation-subtitle {
+            font-family: 'Inter', sans-serif;
+            font-size: 15px;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+        
+        /* Controls */
         #controls {
-            margin-bottom: 20px;
-            padding: 20px;
+            margin: 40px auto;
+            padding: 30px;
             background: white;
-            border-radius: 4px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-radius: 2px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
             max-width: 900px;
             text-align: center;
         }
         
         button {
-            padding: 12px 30px;
-            font-size: 16px;
+            padding: 14px 40px;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
             background: #2c5aa0;
             color: white;
             border: none;
-            border-radius: 4px;
+            border-radius: 2px;
             cursor: pointer;
-            font-weight: bold;
-            margin: 5px;
+            margin: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(44, 90, 160, 0.3);
         }
         
         button:hover {
             background: #1e3d6b;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(44, 90, 160, 0.4);
         }
         
+        button:active {
+            transform: translateY(0);
+        }
+        
+        /* Canvas Container */
         #canvasContainer {
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 40px rgba(0,0,0,0.12);
             background: white;
-            padding: 20px;
+            padding: 30px;
+            border-radius: 2px;
+            max-width: 900px;
+            margin: 0 auto;
         }
         
         .instruction {
             text-align: center;
-            font-size: 14px;
-            color: #666;
-            margin-top: 10px;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #999;
+            margin-top: 20px;
         }
-
-        .section-divider {
-            width: 100%;
-            max-width: 900px;
-            height: 2px;
-            background: linear-gradient(to right, transparent, #2c5aa0, transparent);
-            margin: 40px 0;
+        
+        /* Number Accent */
+        .section-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 80px;
+            font-weight: 700;
+            color: rgba(44, 90, 160, 0.1);
+            position: absolute;
+            top: 20px;
+            left: -20px;
+            line-height: 1;
+            z-index: 0;
         }
-
-        .visualization-header {
-            font-size: 20px;
-            font-weight: 600;
-            color: #2c3e50;
-            text-align: center;
-            margin-bottom: 10px;
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .narrative-section {
+                padding: 40px 30px;
+            }
+            
+            .pull-quote {
+                font-size: 22px;
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                font-size: 36px;
+            }
+            
+            .content-wrapper {
+                padding: 0 20px;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>Laundromat Convergence: Cycle of Necessity</h1>
-    
-    <!-- Introduction Section -->
-    <div class="intro-section">
-        <p>Maps of laundromats in East Coast and New York City.</p>
-        <img src="https://raw.githubusercontent.com/BurtKim-ust/BurtKim-ust.github.io/main/my-folder/laundromat-prototype/east_coast_laundromat.png" alt="Laundromat businesses across the East Coast" style="width: 100%; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin: 20px 0;">
-        
-        <img src="https://raw.githubusercontent.com/BurtKim-ust/BurtKim-ust.github.io/main/my-folder/laundromat-prototype/nyc_laundromat.png" alt="Laundromat businesses in NYC" style="width: 100%; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin: 20px 0;">
-        
-        <p>These humble spaces have woven themselves into the fabric of our city, becoming gathering places where all races and backgrounds converge. In the rhythm of the washing machine—fill, agitate, rinse, spin—we find a metaphor for New York itself: diverse communities mixing, neighborhoods transforming, necessities bringing us together, and through it all, a shared identity emerging.</p>
-        
-        <img src="https://raw.githubusercontent.com/BurtKim-ust/BurtKim-ust.github.io/main/my-folder/laundromat-prototype/metaphor.png" alt="Washing machine cycle as metaphor for urban evolution" style="width: 100%; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin: 20px 0;">
-        
-        <p>New York has always been one of the world's most densely populated cities, a melting pot since its founding. This map shows our population distribution in 2000—a pattern that echoes decades past and continues today.</p>
-        
-        <img src="https://raw.githubusercontent.com/BurtKim-ust/BurtKim-ust.github.io/main/my-folder/laundromat-prototype/census_demo_2000.png" alt="NYC Population Distribution 2000" style="width: 100%; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin: 20px 0;">
-
-        <p>Whether it’s in affluent areas where land and building values are higher than elsewhere, the need for laundromat businesses in NYC has always persisted.</p>
-        
-        <img src="https://raw.githubusercontent.com/BurtKim-ust/BurtKim-ust.github.io/main/my-folder/laundromat-prototype/total_asset.png" alt="NYC Population Distribution 2000" style="width: 100%; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin: 20px 0;">
-        
-        <p>Yet this culture persists despite significant challenges. Water infrastructure struggles to keep pace with our needs. Just in the last three months (July-October 2025), thousands of water-related complaints flooded 311.</p>
-        
-        <img src="https://raw.githubusercontent.com/BurtKim-ust/BurtKim-ust.github.io/main/my-folder/laundromat-prototype/water_complaints_2025.png" alt="NYC Water Complaints July-October 2025" style="width: 100%; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin: 20px 0;">
-        
-        <p><strong>Have you ever considered your everyday routines as part of New York's cultural tapestry?</strong></p>
-        
-        <p>Among the countless traditions that define our city, laundromats remain essential—quiet pillars ensuring millions of New Yorkers can live with dignity, in clean clothes, no matter their circumstances.</p>
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Laundromat Convergence</h1>
+        <div class="subtitle-hero">Cycle of Necessity</div>
     </div>
+    
+    <!-- Main Content -->
+    <div class="content-wrapper">
+        
+        <!-- Introduction Section -->
+        <div class="narrative-section">
+            <span class="section-number">01</span>
+            
+            <p class="lead-text">
+                Maps of laundromats in East Coast and New York City.
+            </p>
+            
+            <div class="image-container">
+                <img src="https://raw.githubusercontent.com/BurtKim-ust/BurtKim-ust.github.io/main/my-folder/laundromat-prototype/east_coast_laundromat.png" alt="Laundromat businesses across the East Coast">
+                <div class="image-caption">Laundromat Distribution — East Coast</div>
+            </div>
+            
+            <div class="image-container">
+                <img src="https://raw.githubusercontent.com/BurtKim-ust/BurtKim-ust.github.io/main/my-folder/laundromat-prototype/nyc_laundromat.png" alt="Laundromat businesses in NYC">
+                <div class="image-caption">Laundromat Density — New York City</div>
+            </div>
+            
+            <p>
+                These humble spaces have woven themselves into the fabric of our city, becoming gathering places where all races and backgrounds converge. In the rhythm of the washing machine—fill, agitate, rinse, spin—we find a metaphor for New York itself: diverse communities mixing, neighborhoods transforming, necessities bringing us together, and through it all, a shared identity emerging.
+            </p>
+            
+            <div class="image-container">
+                <img src="https://raw.githubusercontent.com/BurtKim-ust/BurtKim-ust.github.io/main/my-folder/laundromat-prototype/metaphor.png" alt="Washing machine cycle as metaphor for urban evolution">
+                <div class="image-caption">The Cycle — Urban Metaphor</div>
+            </div>
+        </div>
+        
+        <!-- Population Section -->
+        <div class="narrative-section">
+            <span class="section-number">02</span>
+            
+            <p>
+                New York has always been one of the world's most densely populated cities, a melting pot since its founding. This map shows our population distribution in 2000—a pattern that echoes decades past and continues today.
+            </p>
+            
+            <div class="image-container">
+                <img src="https://raw.githubusercontent.com/BurtKim-ust/BurtKim-ust.github.io/main/my-folder/laundromat-prototype/census_demo_2000.png" alt="NYC Population Distribution 2000">
+                <div class="image-caption">Population Density — Census 2000</div>
+            </div>
 
+            <p>
+                Whether it's in affluent areas where land and building values are higher than elsewhere, the need for laundromat businesses in NYC has always persisted.
+            </p>
+            
+            <div class="image-container">
+                <img src="https://raw.githubusercontent.com/BurtKim-ust/BurtKim-ust.github.io/main/my-folder/laundromat-prototype/total_asset.png" alt="Property Value Distribution">
+                <div class="image-caption">Property Values — NYC Assessment Data</div>
+            </div>
+        </div>
+        
+        <!-- Infrastructure Section -->
+        <div class="narrative-section">
+            <span class="section-number">03</span>
+            
+            <p>
+                Yet this culture persists despite significant challenges. Water infrastructure struggles to keep pace with our needs. Just in the last three months (July-October 2025), thousands of water-related complaints flooded 311.
+            </p>
+            
+            <div class="image-container">
+                <img src="https://raw.githubusercontent.com/BurtKim-ust/BurtKim-ust.github.io/main/my-folder/laundromat-prototype/water_complaints_2025.png" alt="NYC Water Complaints July-October 2025">
+                <div class="image-caption">Water System Failures — 311 Complaints 2025</div>
+            </div>
+            
+            <div class="pull-quote">
+                Have you ever considered your everyday routines as part of New York's cultural tapestry?
+            </div>
+            
+            <p>
+                Among the countless traditions that define our city, laundromats remain essential—quiet pillars ensuring millions of New Yorkers can live with dignity, in clean clothes, no matter their circumstances.
+            </p>
+        </div>
+        
+    </div>
+    
     <!-- Section Divider -->
-    <div class="section-divider"></div>
-
+    <div class="section-divider">
+        <span class="section-divider-text">Interactive Installation</span>
+    </div>
+    
     <!-- 3D Visualization Section -->
-    <div class="visualization-header">Interactive 3D Installation</div>
-    <div class="subtitle">
-        3D visualization of the physical installation: A front-loading washing machine mounted on a pedestal stand (40" height). 
-        The exterior sides feature NYC maps with laundromat locations. The interior shows water complaint data with LED lighting.
+    <div class="content-wrapper">
+        <div class="installation-header">
+            <h2 class="installation-title">Physical Installation Prototype</h2>
+            <p class="installation-subtitle">
+                3D visualization of the physical installation: A front-loading washing machine mounted on a pedestal stand (40" height). 
+                The exterior sides feature NYC maps with laundromat locations. The interior shows water complaint data with LED lighting.
+            </p>
+        </div>
+        
+        <div id="controls">
+            <button id="toggle-door">Toggle Drum Door</button>
+            <button id="reset-view">Reset View</button>
+        </div>
+        
+        <div id="canvasContainer"></div>
+        <div class="instruction">Drag to rotate the view • Scroll to zoom</div>
     </div>
-    
-    <div id="controls">
-        <button id="toggle-door">Toggle Drum Door</button>
-        <button id="reset-view">Reset View</button>
-    </div>
-    
-    <div id="canvasContainer"></div>
-    <div class="instruction">Drag to rotate the view • Scroll to zoom</div>
 
     <script>
         let doorAngle = 0;
@@ -650,7 +931,3 @@
     </script>
 </body>
 </html>
-
-
-
-
