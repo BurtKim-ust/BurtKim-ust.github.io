@@ -17,10 +17,51 @@
         }
         
         h1 {
-            font-size: 24px;
-            margin-bottom: 10px;
-            color: #333;
+            font-size: 32px;
+            margin-bottom: 20px;
+            margin-top: 30px;
+            color: #2c3e50;
             text-align: center;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+        
+        .intro-section {
+            max-width: 900px;
+            background: white;
+            padding: 40px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            line-height: 1.8;
+            color: #333;
+        }
+        
+        .intro-section p {
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+        
+        .intro-section p:first-of-type {
+            font-size: 18px;
+            font-weight: 500;
+            color: #2c5aa0;
+        }
+        
+        .intro-section strong {
+            color: #2c5aa0;
+            font-weight: 600;
+        }
+        
+        .image-placeholder {
+            background: #e8e8e8;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            border: 2px dashed #ccc;
         }
         
         .subtitle {
@@ -70,10 +111,57 @@
             color: #666;
             margin-top: 10px;
         }
+
+        .section-divider {
+            width: 100%;
+            max-width: 900px;
+            height: 2px;
+            background: linear-gradient(to right, transparent, #2c5aa0, transparent);
+            margin: 40px 0;
+        }
+
+        .visualization-header {
+            font-size: 20px;
+            font-weight: 600;
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 <body>
-    <h1>Laundromat Convergence: Cycles of Necessity</h1>
+    <h1>Laundromat Convergence: Cycle of Necessity</h1>
+    
+    <!-- Introduction Section -->
+    <div class="intro-section">
+        <p>Over 2,600 laundromats dot New York City's landscape.</p>
+        
+        <img src="https://raw.githubusercontent.com/BurtKim-ust/BurtKim-ust.github.io/main/my-folder/laundromat-prototype/east_coast_laundromatpng" alt="Laundromat businesses across the East Coast" style="width: 100%; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin: 20px 0;">
+        
+        <img src="https://raw.githubusercontent.com/BurtKim-ust/BurtKim-ust.github.io/main/my-folder/laundromat-prototype/nyc_laundromatpng" alt="Laundromat businesses in NYC" style="width: 100%; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin: 20px 0;">
+        
+        <p>These humble spaces have woven themselves into the fabric of our city, becoming gathering places where all races and backgrounds converge. In the rhythm of the washing machine—fill, agitate, rinse, spin—we find a metaphor for New York itself: diverse communities mixing, neighborhoods transforming, necessities bringing us together, and through it all, a shared identity emerging.</p>
+        
+        <img src="https://raw.githubusercontent.com/BurtKim-ust/BurtKim-ust.github.io/main/my-folder/laundromat-prototype/metaphor.png" alt="Washing machine cycle as metaphor for urban evolution" style="width: 100%; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin: 20px 0;">
+        
+        <p>New York has always been one of the world's most densely populated cities, a melting pot since its founding. This map shows our population distribution in 2000—a pattern that echoes decades past and continues today.</p>
+        
+        <img src="https://raw.githubusercontent.com/BurtKim-ust/BurtKim-ust.github.io/main/my-folder/laundromat-prototype/census_demo_2000.png" alt="NYC Population Distribution 2000" style="width: 100%; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin: 20px 0;">
+        
+        <p>Yet this culture persists despite significant challenges. Water infrastructure struggles to keep pace with our needs. Just in the last three months (July-October 2025), thousands of water-related complaints flooded 311.</p>
+        
+        <img src="https://raw.githubusercontent.com/BurtKim-ust/BurtKim-ust.github.io/main/my-folder/laundromat-prototype/water_complaints_2025.png" alt="NYC Water Complaints July-October 2025" style="width: 100%; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin: 20px 0;">
+        
+        <p><strong>Have you ever considered your everyday routines as part of New York's cultural tapestry?</strong></p>
+        
+        <p>Among the countless traditions that define our city, laundromats remain essential—quiet pillars ensuring millions of New Yorkers can live with dignity, in clean clothes, no matter their circumstances.</p>
+    </div>
+
+    <!-- Section Divider -->
+    <div class="section-divider"></div>
+
+    <!-- 3D Visualization Section -->
+    <div class="visualization-header">Interactive 3D Installation</div>
     <div class="subtitle">
         3D visualization of the physical installation: A front-loading washing machine mounted on a pedestal stand (40" height). 
         The exterior sides feature NYC maps with laundromat locations. The interior shows water complaint data with LED lighting.
@@ -103,9 +191,8 @@
             let canvas = createCanvas(900, 700, WEBGL);
             canvas.parent('canvasContainer');
             
-            // Use HTML5 Audio with correct GitHub raw URL
             doorSound = new Audio('https://raw.githubusercontent.com/BurtKim-ust/DataVisualization/main/laundromat-prototype/washing_machine.mp3');
-            doorSound.volume = 0.5; // 50% volume
+            doorSound.volume = 0.5;
             
             doorSound.addEventListener('error', (e) => {
                 console.error('Error loading audio file:', e);
@@ -117,7 +204,6 @@
             
             generateNYCOutline();
             
-            // Generate laundromat locations
             for (let i = 0; i < 35; i++) {
                 laundryDots.push({
                     x: random(-80, 80),
@@ -126,7 +212,6 @@
                 });
             }
             
-            // Generate water complaint locations
             for (let i = 0; i < 50; i++) {
                 complaintDots.push({
                     x: random(-80, 80),
@@ -136,27 +221,24 @@
                 });
             }
             
-            // Event listeners
             document.getElementById('toggle-door').addEventListener('click', () => {
                 let previousAngle = targetDoorAngle;
                 targetDoorAngle = targetDoorAngle === 0 ? 120 : 0;
                 
-                // Play sound when opening the door (going from 0 to 120)
                 if (previousAngle === 0 && targetDoorAngle === 120) {
                     console.log('Attempting to play sound...');
                     if (doorSound) {
-                        doorSound.currentTime = 0; // Reset to beginning
+                        doorSound.currentTime = 0;
                         doorSound.play()
                             .then(() => console.log('Sound playing!'))
                             .catch(err => console.error('Error playing sound:', err));
                     }
                 }
-                // Stop sound when closing the door (going from 120 to 0)
                 else if (previousAngle === 120 && targetDoorAngle === 0) {
                     console.log('Stopping sound...');
                     if (doorSound && !doorSound.paused) {
                         doorSound.pause();
-                        doorSound.currentTime = 0; // Reset to beginning
+                        doorSound.currentTime = 0;
                     }
                 }
             });
@@ -179,8 +261,7 @@
                 rotationX = constrain(rotationX, -PI/2, PI/2);
             }
             
-            // Move camera to focus on washing machine center
-            translate(0, 200, 0); // Move view up to center on washing machine
+            translate(0, 200, 0);
             
             scale(zoom);
             rotateX(rotationX);
@@ -190,15 +271,13 @@
             directionalLight(255, 255, 255, 0.5, -0.5, -1);
             pointLight(255, 255, 255, 200, -200, 200);
             
-            // Draw pedestal (below washing machine)
             push();
-            translate(0, -100, 0); // Adjusted for shorter pedestal
+            translate(0, -100, 0);
             drawPedestal();
             pop();
             
-            // Draw washing machine at center of view
             push();
-            translate(0, -400, 0); // Adjusted position for shorter pedestal
+            translate(0, -400, 0);
             drawWashingMachine();
             pop();
         }
@@ -209,16 +288,13 @@
             stroke(200);
             strokeWeight(2);
             
-            // Main column - reduced to 200 (half of 400)
             translate(0, 0, 0);
             box(120, 200, 120);
             
-            // Base platform
             translate(0, 110, 0);
             fill(220);
             box(140, 20, 140);
             
-            // Top platform
             translate(0, -220, 0);
             fill(220);
             box(140, 20, 140);
@@ -229,84 +305,70 @@
         function drawWashingMachine() {
             push();
             
-            // FIRST: Draw exterior maps OUTSIDE the washing machine body
             push();
-            translate(-151, 0, 0); // Just 1 unit outside left wall (attached to surface)
-            rotateY(-HALF_PI); // Flipped to face left (outward)
+            translate(-151, 0, 0);
+            rotateY(-HALF_PI);
             
-            // Draw acrylic panel
             fill(255, 255, 255, 250);
             stroke(180);
             strokeWeight(3);
             rect(-110, -170, 220, 340);
             
-            // Frame
             noFill();
             stroke(100);
             strokeWeight(5);
             rect(-115, -175, 230, 350);
             
-            // Map content
             translate(0, 20, 2);
             drawMapContent();
             pop();
             
-            // Right exterior map
             push();
-            translate(151, 0, 0); // Just 1 unit outside right wall (attached to surface)
-            rotateY(HALF_PI); // Flipped to face right (outward)
+            translate(151, 0, 0);
+            rotateY(HALF_PI);
             
-            // Draw acrylic panel
             fill(255, 255, 255, 250);
             stroke(180);
             strokeWeight(3);
             rect(-110, -170, 220, 340);
             
-            // Frame
             noFill();
             stroke(100);
             strokeWeight(5);
             rect(-115, -175, 230, 350);
             
-            // Map content
             translate(0, 20, 2);
             drawMapContent();
             pop();
             
-            // THEN: Draw washing machine body
             push();
             fill(250);
             stroke(180);
             strokeWeight(2);
             
-            // Back wall
             push();
             translate(0, 0, -120);
             plane(300, 360);
             pop();
             
-            // Left side wall
             push();
             translate(-150, 0, 0);
             rotateY(HALF_PI);
             plane(240, 360);
             pop();
             
-            // Right side wall
             push();
             translate(150, 0, 0);
             rotateY(HALF_PI);
             plane(240, 360);
             pop();
             
-            // Top wall
             push();
             translate(0, -180, 0);
             rotateX(HALF_PI);
             plane(300, 240);
             pop();
             
-            // Bottom wall
             push();
             translate(0, 180, 0);
             rotateX(HALF_PI);
@@ -350,7 +412,6 @@
         }
         
         function drawMapContent() {
-            // NYC outline
             noFill();
             stroke(80, 80, 120);
             strokeWeight(2);
@@ -360,7 +421,6 @@
             }
             endShape(CLOSE);
             
-            // Census background zones
             fill(251, 106, 74, 80);
             noStroke();
             ellipse(-30, 40, 80, 100);
@@ -368,7 +428,6 @@
             fill(252, 174, 145, 80);
             ellipse(40, -20, 90, 110);
             
-            // Laundromat dots
             laundryDots.forEach(dot => {
                 if (dot.size > 4) {
                     fill(139, 69, 19);
@@ -382,7 +441,6 @@
                 circle(dot.x, dot.y, dot.size * 2);
             });
             
-            // Title
             fill(0);
             noStroke();
             textAlign(CENTER);
@@ -393,7 +451,6 @@
             textSize(9);
             text('vs 2000-2010 Demographics', 0, -125);
             
-            // Legend
             textAlign(LEFT);
             textSize(8);
             fill(255, 215, 0);
@@ -425,26 +482,21 @@
             push();
             translate(0, 0, 120);
             
-            // Draw ONLY the drum opening rings - NO front panel at all
             push();
             translate(0, 20, 2);
             
-            // Outer chrome ring
             noFill();
             stroke(150);
             strokeWeight(4);
             circle(0, 0, 240);
             
-            // Inner chrome ring
             stroke(120);
             strokeWeight(3);
             circle(0, 0, 220);
             pop();
             
-            // Draw the door
             drawDoor();
             
-            // Always draw interior (visible through the open front)
             if (doorAngle > 20) {
                 drawInterior();
             }
@@ -528,7 +580,6 @@
             
             push();
             
-            // ONLY draw the back wall with map - nothing else
             push();
             translate(0, 20, -160);
             fill(255);
@@ -537,11 +588,9 @@
             circle(0, 0, 180);
             pop();
             
-            // THE MAP on back wall
             push();
             translate(0, 20, -158);
             
-            // NYC outline
             noFill();
             stroke(0);
             strokeWeight(4);
@@ -551,7 +600,6 @@
             }
             endShape(CLOSE);
             
-            // Water complaint dots
             complaintDots.forEach(dot => {
                 let pulse = 1 + 0.4 * sin(frameCount * 0.05 + dot.pulseOffset);
                 fill(0, 100, 255);
@@ -560,7 +608,6 @@
                 circle(dot.x * 0.7, dot.y * 0.7, dot.size * 4 * pulse);
             });
             
-            // Title
             fill(0);
             noStroke();
             textAlign(CENTER);
