@@ -547,11 +547,14 @@
             drawPedestal();
             pop();
             
-            // Draw washing machine at center of view
+            // Draw washing machine
             push();
-            translate(0, -400, 0); // Adjusted position for shorter pedestal
+            translate(0, -400, 0);
             drawWashingMachine();
             pop();
+            
+            // Add people around (sides and back)
+            drawPeopleAroundMachine();
         }
         
         function drawPedestal() {
@@ -575,6 +578,49 @@
             box(140, 20, 140);
             
             pop();
+        }
+
+        function drawPeopleAroundMachine() {
+            const people = [
+                { x: -250, z: 80, skin: color(255, 224, 189), shirt: color(70, 130, 180), label: "Asian" },
+                { x: 250, z: 80, skin: color(255, 219, 172), shirt: color(220, 20, 60), label: "White" },
+                { x: -180, z: -180, skin: color(60, 40, 30), shirt: color(255, 215, 0), label: "Black" },
+                { x: 180, z: -180, skin: color(205, 133, 63), shirt: color(0, 128, 0), label: "Hispanic" }
+            ];
+        
+            for (let p of people) {
+                push();
+                translate(p.x, -400, p.z); // base level near washing machine pedestal
+        
+                // Body
+                fill(p.shirt);
+                noStroke();
+                box(40, 80, 20);
+        
+                // Head
+                translate(0, -70, 0);
+                fill(p.skin);
+                sphere(20);
+        
+                // Arms
+                push();
+                fill(p.shirt);
+                translate(0, 20, 0);
+                box(60, 15, 15);
+                pop();
+        
+                // Label above each person
+                push();
+                translate(0, -60, 0);
+                rotateY(-rotationY); // always face camera
+                fill(0);
+                textAlign(CENTER);
+                textSize(14);
+                text(p.label, 0, -10);
+                pop();
+        
+                pop();
+            }
         }
         
         function drawWashingMachine() {
