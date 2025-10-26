@@ -11,7 +11,7 @@
     <style>
         body {
             margin: 0;
-            padding: 20px;
+            padding: 0;
             font-family: 'Cormorant Garamond', serif;
             background: linear-gradient(180deg, #f5f5f5 0%, #e8f4f8 50%, #d4e9f7 100%);
             display: flex;
@@ -24,7 +24,8 @@
             font-family: 'Playfair Display', serif;
             font-size: 48px;
             font-weight: 700;
-            margin-bottom: 20px;
+            margin: 40px 0 20px 0;
+            padding: 0 20px;
             color: #1a1a1a;
             text-align: center;
             letter-spacing: 2px;
@@ -258,9 +259,6 @@
     </style>
 </head>
 <body>
-    <!-- Bubble container -->
-    <div id="bubble-container"></div>
-    
     <h1>Laundromat Convergence: Cycles of Necessity</h1>
     <div class="subtitle">
         3D visualization of the physical installation: A front-loading washing machine mounted on a pedestal stand (40" height). 
@@ -357,15 +355,24 @@
         <div id="canvasContainer"></div>
         <div class="instruction">Drag to rotate the view • Scroll to zoom</div>
     </div>
+    
+    <!-- Bubble container at end so it doesn't affect layout -->
+    <div id="bubble-container"></div>
 
     <script>
-        // Create floating bubbles
+        // Create floating bubbles with limit
+        let bubbleCount = 0;
+        const maxBubbles = 15;
+        
         function createBubbles() {
             const bubbleContainer = document.getElementById('bubble-container');
             
             setInterval(() => {
+                if (bubbleCount >= maxBubbles) return; // Limit total bubbles
+                
                 const bubble = document.createElement('div');
                 bubble.className = 'bubble';
+                bubbleCount++;
                 
                 // Random size between 20px and 80px
                 const size = Math.random() * 60 + 20;
@@ -387,8 +394,9 @@
                 // Remove bubble after animation
                 setTimeout(() => {
                     bubble.remove();
+                    bubbleCount--;
                 }, (duration + 2) * 1000);
-            }, 800); // Create a new bubble every 800ms
+            }, 1200); // Create a new bubble every 1.2 seconds
         }
         
         // Start creating bubbles
@@ -584,7 +592,7 @@
             drawPedestal();
             pop();
             
-            // Draw washing machine at center of view
+            // Draw washing machine
             push();
             translate(0, -400, 0);
             drawWashingMachine();
@@ -616,49 +624,7 @@
             
             pop();
         }
-
-        function drawPeopleAroundMachine() {
-            const people = [
-                { x: -250, z: 80, skin: color(255, 224, 189), shirt: color(70, 130, 180), label: "Asian" },
-                { x: 250, z: 80, skin: color(255, 219, 172), shirt: color(220, 20, 60), label: "White" },
-                { x: -180, z: -180, skin: color(60, 40, 30), shirt: color(255, 215, 0), label: "Black" },
-                { x: 180, z: -180, skin: color(205, 133, 63), shirt: color(0, 128, 0), label: "Hispanic" }
-            ];
         
-            for (let p of people) {
-                push();
-                translate(p.x, -400, p.z); // base level near washing machine pedestal
-        
-                // Body
-                fill(p.shirt);
-                noStroke();
-                box(40, 80, 20);
-        
-                // Head
-                translate(0, -70, 0);
-                fill(p.skin);
-                sphere(20);
-        
-                // Arms
-                push();
-                fill(p.shirt);
-                translate(0, 20, 0);
-                box(60, 15, 15);
-                pop();
-        
-                // Label above each person
-                push();
-                translate(0, -60, 0);
-                rotateY(-rotationY); // always face camera
-                fill(0);
-                textAlign(CENTER);
-                textSize(14);
-                text(p.label, 0, -10);
-                pop();
-        
-                pop();
-            }
-        }
         function drawWashingMachine() {
             push();
             
@@ -1007,7 +973,49 @@
             
             pop();
         }
+
+        function drawPeopleAroundMachine() {
+            const people = [
+                { x: -250, z: 80, skin: color(255, 224, 189), shirt: color(70, 130, 180), label: "Asian" },
+                { x: 250, z: 80, skin: color(255, 219, 172), shirt: color(220, 20, 60), label: "White" },
+                { x: -180, z: -180, skin: color(60, 40, 30), shirt: color(255, 215, 0), label: "Black" },
+                { x: 180, z: -180, skin: color(205, 133, 63), shirt: color(0, 128, 0), label: "Hispanic" }
+            ];
         
+            for (let p of people) {
+                push();
+                translate(p.x, -400, p.z); // base level near washing machine pedestal
+        
+                // Body
+                fill(p.shirt);
+                noStroke();
+                box(40, 80, 20);
+        
+                // Head
+                translate(0, -70, 0);
+                fill(p.skin);
+                sphere(20);
+        
+                // Arms
+                push();
+                fill(p.shirt);
+                translate(0, 20, 0);
+                box(60, 15, 15);
+                pop();
+        
+                // Label above each person
+                push();
+                translate(0, -60, 0);
+                rotateY(-rotationY); // always face camera
+                fill(0);
+                textAlign(CENTER);
+                textSize(14);
+                text(p.label, 0, -10);
+                pop();
+        
+                pop();
+            }
+        }
         function generateNYCOutline() {
             nycOutline = [
                 {x: -20, y: -80}, {x: -15, y: -70}, {x: -12, y: -50},
