@@ -452,6 +452,10 @@
             let canvas = createCanvas(900, 700, WEBGL);
             canvas.parent('canvasContainer');
             
+            // Load images
+            censusImage = loadImage('https://raw.githubusercontent.com/BurtKim-ust/BurtKim-ust.github.io/main/my-folder/laundromat-prototype/census_demo_2000.png');
+            laundromatImage = loadImage('https://raw.githubusercontent.com/BurtKim-ust/BurtKim-ust.github.io/main/my-folder/laundromat-prototype/nyc_laundromat.png');
+
             // Use HTML5 Audio with correct GitHub raw URL
             doorSound = new Audio('https://raw.githubusercontent.com/BurtKim-ust/DataVisualization/main/laundromat-prototype/washing_machine.mp3');
             doorSound.volume = 0.5; // 50% volume
@@ -758,7 +762,9 @@
             
             // Map content
             translate(0, 20, 2);
-            drawMapContent();
+            if (censusImage && laundromatImage) {
+                drawMapContent(true); // left side uses census image
+            }
             pop();
             
             // Right exterior map
@@ -780,7 +786,9 @@
             
             // Map content
             translate(0, 20, 2);
-            drawMapContent();
+            if (censusImage && laundromatImage) {
+                drawMapContent(false); // right side uses laundromat image
+            }
             pop();
             
             // THEN: Draw washing machine body
@@ -859,78 +867,14 @@
             pop();
         }
         
-        function drawMapContent() {
-            // NYC outline
-            noFill();
-            stroke(80, 80, 120);
-            strokeWeight(2);
-            beginShape();
-            for (let point of nycOutline) {
-                vertex(point.x, point.y);
-            }
-            endShape(CLOSE);
-            
-            // Census background zones
-            fill(251, 106, 74, 80);
-            noStroke();
-            ellipse(-30, 40, 80, 100);
-            
-            fill(252, 174, 145, 80);
-            ellipse(40, -20, 90, 110);
-            
-            // Laundromat dots
-            laundryDots.forEach(dot => {
-                if (dot.size > 4) {
-                    fill(139, 69, 19);
-                } else if (dot.size > 3) {
-                    fill(255, 140, 0);
-                } else {
-                    fill(255, 215, 0);
-                }
-                stroke(51);
-                strokeWeight(1.5);
-                circle(dot.x, dot.y, dot.size * 2);
-            });
-            
-            // Title
-            fill(0);
-            noStroke();
-            textAlign(CENTER);
-            textSize(11);
-            textStyle(BOLD);
-            text('Laundromats 2023-2025', 0, -140);
-            textStyle(NORMAL);
-            textSize(9);
-            text('vs 2000-2010 Demographics', 0, -125);
-            
-            // Legend
-            textAlign(LEFT);
-            textSize(8);
-            fill(255, 215, 0);
-            stroke(51);
-            strokeWeight(1);
-            circle(-90, 120, 6);
-            fill(0);
-            noStroke();
-            text('0-4 yrs', -80, 123);
-            
-            fill(255, 140, 0);
-            stroke(51);
-            strokeWeight(1);
-            circle(-90, 135, 6);
-            fill(0);
-            noStroke();
-            text('5-14 yrs', -80, 138);
-            
-            fill(139, 69, 19);
-            stroke(51);
-            strokeWeight(1);
-            circle(-90, 150, 6);
-            fill(0);
-            noStroke();
-            text('15+ yrs', -80, 153);
+        function drawMapContent(useLeftImage) {
+            // Draw image on the map panel
+            push();
+            texture(useLeftImage ? censusImage : laundromatImage);
+            rect(-110, -170, 220, 340);
+            pop();
         }
-        
+                
         function drawFrontPanel() {
             push();
             translate(0, 0, 120);
