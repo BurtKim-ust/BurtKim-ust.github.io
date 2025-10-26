@@ -3,108 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laundromat Convergence - Interactive Installation</title>
+    <title>Laundromat Convergence - 3D Installation Prototype</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
     <style>
         body {
             margin: 0;
-            padding: 0;
+            padding: 20px;
             font-family: 'Helvetica Neue', Arial, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
+            background: #f5f5f5;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            overflow: hidden;
         }
         
         h1 {
-            font-size: 42px;
-            margin: 30px 0 10px 0;
-            color: white;
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #333;
             text-align: center;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            font-weight: 300;
-            letter-spacing: 2px;
         }
         
         .subtitle {
-            color: rgba(255,255,255,0.9);
-            margin-bottom: 30px;
-            font-size: 16px;
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 14px;
             line-height: 1.6;
-            max-width: 700px;
+            max-width: 900px;
             text-align: center;
-            padding: 0 20px;
         }
         
-        #intro-screen {
-            position: fixed;
-            top: 0;
-            left: 0;
+        #intro-section {
             width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            z-index: 1000;
-            transition: opacity 0.5s ease-out;
+            max-width: 900px;
+            margin-bottom: 30px;
         }
         
-        #intro-screen.hidden {
-            opacity: 0;
-            pointer-events: none;
+        .interaction-prompt {
+            text-align: center;
+            font-size: 18px;
+            color: #333;
+            margin: 30px 0 20px 0;
+            font-weight: bold;
         }
         
         .interaction-area {
             position: relative;
-            width: 600px;
-            height: 400px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 20px;
-            border: 3px dashed rgba(255,255,255,0.4);
+            width: 100%;
+            max-width: 600px;
+            height: 300px;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            border-radius: 15px;
+            border: 3px dashed #999;
             display: flex;
             align-items: center;
             justify-content: center;
-            backdrop-filter: blur(10px);
+            margin: 0 auto 30px auto;
         }
         
         #washing-machine-target {
-            width: 300px;
-            height: 300px;
+            width: 200px;
+            height: 200px;
             background: white;
             border-radius: 15px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 80px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         
         #washing-machine-target.drag-over {
             transform: scale(1.05);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            background: #e8f4f8;
         }
         
         #detergent {
             position: absolute;
-            top: 50px;
+            top: 30px;
             left: 50px;
-            width: 80px;
-            height: 120px;
+            width: 60px;
+            height: 90px;
             background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
             border-radius: 10px;
             cursor: grab;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 50px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            font-size: 40px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
             transition: transform 0.2s ease;
         }
         
@@ -115,29 +103,21 @@
         #detergent.dragging {
             cursor: grabbing;
             opacity: 0.8;
-            z-index: 1001;
         }
         
-        .instruction {
+        .drag-instruction {
             text-align: center;
-            font-size: 20px;
-            color: white;
-            margin-top: 30px;
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.6; }
+            font-size: 14px;
+            color: #666;
+            margin-top: 10px;
+            font-style: italic;
         }
         
         #experience-container {
             display: none;
             width: 100%;
-            height: 100vh;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
         }
         
         #experience-container.active {
@@ -147,57 +127,53 @@
         #controls {
             margin-bottom: 20px;
             padding: 20px;
-            background: rgba(255,255,255,0.15);
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            background: white;
+            border-radius: 4px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            max-width: 900px;
             text-align: center;
         }
         
         button {
-            padding: 15px 35px;
+            padding: 12px 30px;
             font-size: 16px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #2c5aa0;
             color: white;
             border: none;
-            border-radius: 25px;
+            border-radius: 4px;
             cursor: pointer;
             font-weight: bold;
             margin: 5px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
         
         button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 7px 20px rgba(0,0,0,0.3);
-        }
-        
-        button:active {
-            transform: translateY(0);
+            background: #1e3d6b;
         }
         
         #canvasContainer {
-            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             background: white;
-            border-radius: 15px;
             padding: 20px;
         }
         
-        .canvas-instruction {
+        .instruction {
             text-align: center;
             font-size: 14px;
-            color: white;
-            margin-top: 15px;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+            color: #666;
+            margin-top: 10px;
         }
     </style>
 </head>
 <body>
-    <div id="intro-screen">
-        <h1>Laundromat Convergence</h1>
+    <div id="intro-section">
+        <h1>Laundromat Convergence: Cycles of Necessity</h1>
         <div class="subtitle">
-            An interactive exploration of urban infrastructure and necessity
+            3D visualization of the physical installation: A front-loading washing machine mounted on a pedestal stand (40" height). 
+            The exterior sides feature NYC maps with laundromat locations. The interior shows water complaint data with LED lighting.
+        </div>
+        
+        <div class="interaction-prompt">
+            Drag the detergent to the washing machine to explore the 3D model
         </div>
         
         <div class="interaction-area">
@@ -205,31 +181,26 @@
             <div id="washing-machine-target">🔄</div>
         </div>
         
-        <div class="instruction">
-            Drag the detergent to the washing machine to begin
+        <div class="drag-instruction">
+            ↑ Drag the detergent bottle to begin the interactive experience
         </div>
     </div>
     
     <div id="experience-container">
-        <h1>Cycles of Necessity</h1>
-        <div class="subtitle">
-            Front-loading washing machine installation with NYC laundromat & water complaint data
-        </div>
-        
         <div id="controls">
             <button id="toggle-door">Toggle Drum Door</button>
             <button id="reset-view">Reset View</button>
         </div>
         
         <div id="canvasContainer"></div>
-        <div class="canvas-instruction">Drag to rotate • Scroll to zoom</div>
+        <div class="instruction">Drag to rotate the view • Scroll to zoom</div>
     </div>
 
     <script>
         // Drag and drop functionality
         let detergent = document.getElementById('detergent');
         let target = document.getElementById('washing-machine-target');
-        let introScreen = document.getElementById('intro-screen');
+        let introSection = document.getElementById('intro-section');
         let experienceContainer = document.getElementById('experience-container');
         
         let dragOffsetX = 0;
@@ -258,24 +229,23 @@
             e.preventDefault();
             target.classList.remove('drag-over');
             
-            // Trigger transition to 3D experience
+            // Hide intro section and show 3D experience
+            introSection.style.display = 'none';
+            experienceContainer.classList.add('active');
+            
+            // Initialize p5 sketch
             setTimeout(() => {
-                introScreen.classList.add('hidden');
-                experienceContainer.classList.add('active');
-                // Initialize p5 sketch after transition
-                setTimeout(() => {
-                    if (typeof setup === 'function') {
-                        setup();
-                    }
-                }, 500);
-            }, 500);
+                if (typeof setup === 'function') {
+                    setup();
+                }
+            }, 100);
         });
         
         // P5.js 3D visualization code
         let doorAngle = 0;
         let targetDoorAngle = 0;
-        let rotationX = -0.4;
-        let rotationY = 0.6;
+        let rotationX = -0.3;
+        let rotationY = 0.8;
         let zoom = 1;
         let doorSound;
         let canvasCreated = false;
@@ -348,8 +318,8 @@
             });
             
             document.getElementById('reset-view').addEventListener('click', () => {
-                rotationX = -0.4;
-                rotationY = 0.6;
+                rotationX = -0.3;
+                rotationY = 0.8;
                 zoom = 1;
             });
         }
