@@ -355,53 +355,8 @@
         <div id="canvasContainer"></div>
         <div class="instruction">Drag to rotate the view • Scroll to zoom</div>
     </div>
-    
-    <!-- Bubble container at end so it doesn't affect layout -->
-    <div id="bubble-container"></div>
 
     <script>
-        // Create floating bubbles with limit
-        let bubbleCount = 0;
-        const maxBubbles = 15;
-        
-        function createBubbles() {
-            const bubbleContainer = document.getElementById('bubble-container');
-            
-            setInterval(() => {
-                if (bubbleCount >= maxBubbles) return; // Limit total bubbles
-                
-                const bubble = document.createElement('div');
-                bubble.className = 'bubble';
-                bubbleCount++;
-                
-                // Random size between 20px and 80px
-                const size = Math.random() * 60 + 20;
-                bubble.style.width = size + 'px';
-                bubble.style.height = size + 'px';
-                
-                // Random horizontal position
-                bubble.style.left = Math.random() * 100 + '%';
-                
-                // Random animation duration between 8-15 seconds
-                const duration = Math.random() * 7 + 8;
-                bubble.style.animationDuration = duration + 's';
-                
-                // Random delay
-                bubble.style.animationDelay = Math.random() * 2 + 's';
-                
-                bubbleContainer.appendChild(bubble);
-                
-                // Remove bubble after animation
-                setTimeout(() => {
-                    bubble.remove();
-                    bubbleCount--;
-                }, (duration + 2) * 1000);
-            }, 1200); // Create a new bubble every 1.2 seconds
-        }
-        
-        // Start creating bubbles
-        createBubbles();
-        
         // Dynamic background color change on scroll
         window.addEventListener('scroll', () => {
             const scrollPosition = window.scrollY;
@@ -592,14 +547,11 @@
             drawPedestal();
             pop();
             
-            // Draw washing machine
+            // Draw washing machine at center of view
             push();
-            translate(0, -400, 0);
+            translate(0, -400, 0); // Adjusted position for shorter pedestal
             drawWashingMachine();
             pop();
-            
-            // Add people around (sides and back)
-            drawPeopleAroundMachine();
         }
         
         function drawPedestal() {
@@ -973,49 +925,7 @@
             
             pop();
         }
-
-        function drawPeopleAroundMachine() {
-            const people = [
-                { x: -250, z: 80, skin: color(255, 224, 189), shirt: color(70, 130, 180), label: "Asian" },
-                { x: 250, z: 80, skin: color(255, 219, 172), shirt: color(220, 20, 60), label: "White" },
-                { x: -180, z: -180, skin: color(60, 40, 30), shirt: color(255, 215, 0), label: "Black" },
-                { x: 180, z: -180, skin: color(205, 133, 63), shirt: color(0, 128, 0), label: "Hispanic" }
-            ];
         
-            for (let p of people) {
-                push();
-                translate(p.x, -400, p.z); // base level near washing machine pedestal
-        
-                // Body
-                fill(p.shirt);
-                noStroke();
-                box(40, 80, 20);
-        
-                // Head
-                translate(0, -70, 0);
-                fill(p.skin);
-                sphere(20);
-        
-                // Arms
-                push();
-                fill(p.shirt);
-                translate(0, 20, 0);
-                box(60, 15, 15);
-                pop();
-        
-                // Label above each person
-                push();
-                translate(0, -60, 0);
-                rotateY(-rotationY); // always face camera
-                fill(0);
-                textAlign(CENTER);
-                textSize(14);
-                text(p.label, 0, -10);
-                pop();
-        
-                pop();
-            }
-        }
         function generateNYCOutline() {
             nycOutline = [
                 {x: -20, y: -80}, {x: -15, y: -70}, {x: -12, y: -50},
