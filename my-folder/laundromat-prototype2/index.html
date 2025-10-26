@@ -580,45 +580,158 @@
             pop();
         }
 
+        // === Add People Around the Washing Machine ===
         function drawPeopleAroundMachine() {
             const people = [
-                { x: -250, z: 80, skin: color(255, 224, 189), shirt: color(70, 130, 180), label: "Asian" },
-                { x: 250, z: 80, skin: color(255, 219, 172), shirt: color(220, 20, 60), label: "White" },
-                { x: -180, z: -180, skin: color(60, 40, 30), shirt: color(255, 215, 0), label: "Black" },
-                { x: 180, z: -180, skin: color(205, 133, 63), shirt: color(0, 128, 0), label: "Hispanic" }
+                { x: -250, z: 80, skin: color(255, 224, 189), shirt: color(70, 130, 180), pants: color(50, 50, 100), hair: color(40, 30, 20), label: "Asian" },
+                { x: 250, z: 80, skin: color(255, 219, 172), shirt: color(220, 20, 60), pants: color(60, 60, 120), hair: color(210, 180, 140), label: "White" },
+                { x: -180, z: -180, skin: color(60, 40, 30), shirt: color(255, 215, 0), pants: color(80, 80, 80), hair: color(20, 20, 20), label: "Black" },
+                { x: 180, z: -180, skin: color(205, 133, 63), shirt: color(0, 128, 0), pants: color(70, 70, 140), hair: color(70, 50, 30), label: "Hispanic" }
             ];
-        
             for (let p of people) {
                 push();
-                translate(p.x, -400, p.z); // base level near washing machine pedestal
-        
-                // Body
+                translate(p.x, -400, p.z);
+                
+                // LEGS (bottom, pants)
+                push();
+                fill(p.pants);
+                noStroke();
+                translate(-12, 50, 0);
+                box(18, 100, 18); // left leg
+                pop();
+                
+                push();
+                fill(p.pants);
+                noStroke();
+                translate(12, 50, 0);
+                box(18, 100, 18); // right leg
+                pop();
+                
+                // SHOES
+                push();
+                fill(60, 40, 30);
+                noStroke();
+                translate(-12, 105, 5);
+                box(20, 10, 30); // left shoe
+                pop();
+                
+                push();
+                fill(60, 40, 30);
+                noStroke();
+                translate(12, 105, 5);
+                box(20, 10, 30); // right shoe
+                pop();
+                
+                // TORSO (body/shirt) - larger
+                push();
                 fill(p.shirt);
                 noStroke();
-                box(40, 80, 20);
-        
-                // Head
-                translate(0, -70, 0);
+                translate(0, -30, 0);
+                box(60, 120, 30); // bigger torso
+                pop();
+                
+                // NECK
+                push();
                 fill(p.skin);
-                sphere(20);
-        
-                // Arms
+                noStroke();
+                translate(0, -95, 0);
+                cylinder(10, 20);
+                pop();
+                
+                // HEAD - larger
+                push();
+                fill(p.skin);
+                noStroke();
+                translate(0, -115, 0);
+                sphere(30); // bigger head
+                pop();
+                
+                // HAIR - on top of head
+                push();
+                fill(p.hair);
+                noStroke();
+                translate(0, -135, 0);
+                sphere(32);
+                pop();
+                
+                // EYES
+                push();
+                fill(255);
+                noStroke();
+                translate(-8, -115, 27);
+                sphere(4); // left eye white
+                pop();
+                
+                push();
+                fill(255);
+                noStroke();
+                translate(8, -115, 27);
+                sphere(4); // right eye white
+                pop();
+                
+                push();
+                fill(0);
+                noStroke();
+                translate(-8, -115, 30);
+                sphere(2); // left pupil
+                pop();
+                
+                push();
+                fill(0);
+                noStroke();
+                translate(8, -115, 30);
+                sphere(2); // right pupil
+                pop();
+                
+                // NOSE
+                push();
+                fill(p.skin);
+                stroke(0, 50);
+                strokeWeight(1);
+                translate(0, -110, 28);
+                cone(4, 8);
+                pop();
+                
+                // ARMS - longer and more visible
                 push();
                 fill(p.shirt);
-                translate(0, 20, 0);
-                box(60, 15, 15);
+                noStroke();
+                translate(-35, -25, 0);
+                box(15, 80, 15); // left arm
                 pop();
-        
+                
+                push();
+                fill(p.shirt);
+                noStroke();
+                translate(35, -25, 0);
+                box(15, 80, 15); // right arm
+                pop();
+                
+                // HANDS
+                push();
+                fill(p.skin);
+                noStroke();
+                translate(-35, 20, 0);
+                sphere(8); // left hand
+                pop();
+                
+                push();
+                fill(p.skin);
+                noStroke();
+                translate(35, 20, 0);
+                sphere(8); // right hand
+                pop();
+                
                 // Label above each person
                 push();
-                translate(0, -60, 0);
-                rotateY(-rotationY); // always face camera
+                translate(0, -160, 0);
+                rotateY(-rotationY);
                 fill(0);
                 textAlign(CENTER);
-                textSize(14);
+                textSize(16);
+                textStyle(BOLD);
                 text(p.label, 0, -10);
                 pop();
-        
                 pop();
             }
         }
