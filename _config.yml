@@ -1,10 +1,10 @@
 # Site settings
-title: Embedded/Hardware Engineer
+title: Embedded/Firmware/ASIC Engineer
 email: jonghyeok.kim@cooper.edu
 url: https://burtkim-ust.github.io/
 description: "Previous or Ongoing Projects Done by Burt Kim"
 keywords: "Software Development, ASIC Design, IoT Devices, and RF Analog Design"
-skills: "C/C++, Python, Verilog, React Native, Firebase Cloud, LTspice, SOLIDWORKS, MATLAB"
+skills: "C/C++, Python, Verilog, React Native, Firebase Cloud, LTspice, MATLAB, JavaScript, Virtuoso"
 meta_author: Kim Jonghyeok (Burt)
 
 # Google webmaster tools
@@ -40,7 +40,7 @@ footer:
 # Social networks usernames (many more available: google-plus, flickr, dribbble, pinterest, instagram, tumblr, linkedin, etc.)
 social:
   - title: Instagram
-    url: https://www.instagram.com/__burt_kim__/
+    url: https://www.instagram.com/burt__kim__/
   - title: Linkedin
     url: https://www.linkedin.com/in/jonghyeok-kim-5a9a9928a/
   - title: github
@@ -52,8 +52,8 @@ social:
 
 # Postal address (add as many lines as necessary)
 address:
-  - line: 21 Stuyvesant Oval.
-  - line: New York, NY 10009
+  - line: 632 Newark Ave.
+  - line: Jersey City, NJ 07306
 
 # Credits content
 credits: '<a href="http://startbootstrap.com">Start Bootstrap</a>.'
