@@ -677,6 +677,9 @@
             if (event.target.id === 'modalOverlay' || event.currentTarget.classList.contains('modal-close')) {
                 document.getElementById('modalOverlay').classList.remove('active');
                 document.body.style.overflow = '';
+                
+                // Stop videos by clearing the container
+                document.getElementById('modalVideos').innerHTML = '';
             }
         }
 
@@ -765,6 +768,9 @@
             if (e.key === 'Escape') {
                 document.getElementById('modalOverlay').classList.remove('active');
                 document.body.style.overflow = '';
+                
+                // Stop videos by clearing the container
+                document.getElementById('modalVideos').innerHTML = '';
             }
         });
     </script>
