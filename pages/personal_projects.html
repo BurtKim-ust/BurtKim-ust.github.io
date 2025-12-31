@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Projects - Engineering Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="../index.html" class="navbar-brand">
+                <span>Jonghyeok (Burt) Kim</span>
+            </a>
+            <ul class="navbar-nav">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="about_me.html">About</a></li>
+                <li><a href="work_experience.html">Experience</a></li>
+                <li><a href="goals_vision.html">Goals</a></li>
+                <li><a href="personal_projects.html" class="active">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1 class="page-title">Personal Projects</h1>
+            <p class="page-subtitle">A collection of projects spanning RF, Software, Hardware, ASIC, and IoT domains.</p>
+        </div>
+    </header>
+
+    <!-- Projects Section -->
+    <section class="section">
+        <div class="container">
+            
+            <!-- RF Engineering Projects -->
+            <div id="rf" class="category-header">
+                <h3 class="category-title">RF Engineering</h3>
+            </div>
+            <div class="cards-list">
+                <div class="card-horizontal" onclick="openModal('rf4')">
+                    <div class="card-image" style="background: white;">
+                        <img src="../images/portfolio/16QAM_overall_design.png" alt="16 QAM Transmitter Design" style="width: 100%; height: 100%; object-fit: contain; padding: 20px;">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-category">RF Engineering</div>
+                        <h3 class="card-title">4.5 ~ 6.3 GHz 16 QAM Transmitter</h3>
+                        <p class="card-description">Designed a passive 16-QAM vector modulator operating at 5.4 GHz with 1.8 GHz bandwidth, achieving phase accuracy within ±3.5° and amplitude variation within ±0.7 dB using Rogers 4003 substrate.</p>
+                        <div class="card-tags">
+                            <span class="card-tag">Transmitter</span>
+                            <span class="card-tag">16 QAM</span>
+                            <span class="card-tag">Microwave Engineering</span>
+                            <span class="card-tag">Constellation</span>
+                            <span class="card-tag">ADS</span>
+                        </div>
+                        <div class="card-arrow">→</div>
+                    </div>
+                </div>
+                <div class="card-horizontal" onclick="openModal('rf3')">
+                    <div class="card-image" style="background: white;">
+                        <img src="../images/portfolio/transceiver_overall_design.png" alt="QPSK Transceiver Design" style="width: 100%; height: 100%; object-fit: contain; padding: 20px;">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-category">RF Engineering</div>
+                        <h3 class="card-title">12.4 GHz QPSK Transceiver</h3>
+                        <p class="card-description">Software-defined radio platform with wideband coverage from 70MHz to 6GHz using direct-conversion architecture with FPGA-based signal processing.</p>
+                        <div class="card-tags">
+                            <span class="card-tag">Transceiver</span>
+                            <span class="card-tag">QPSK</span>
+                            <span class="card-tag">System Design</span>
+                        </div>
+                        <div class="card-arrow">→</div>
+                    </div>
+                </div>
+                <div class="card-horizontal" onclick="openModal('rf2')">
+                    <div class="card-image" style="background: white;">
+                        <img src="../images/portfolio/41_2_opamp.png" alt="41.2dB OpAmp" style="width: 100%; height: 100%; object-fit: contain; padding: 20px;">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-category">RF Engineering</div>
+                        <h3 class="card-title">0 - 20 MHz 41.2dB Operational Amplifier</h3>
+                        <p class="card-description">Designed 41.2 dB 2nd stage operational amplifier for general purpose (targeted for 2.4 GHz BLE operating frequency).</p>
+                        <div class="card-tags">
+                            <span class="card-tag">Virtuoso</span>
+                            <span class="card-tag">Operational Amplifier</span>
+                            <span class="card-tag">65nm CMOS</span>
+                            <span class="card-tag">VLSI Design</span>
+                        </div>
+                        <div class="card-arrow">→</div>
+                    </div>
+                </div>
+                <div class="card-horizontal" onclick="openModal('rf1')">
+                    <div class="card-image" style="background: white;">
+                        <img src="../images/portfolio/dif_to_single.png" alt="Differential-to-Single Ended Amplifier" style="width: 100%; height: 100%; object-fit: contain; padding: 20px;">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-category">RF Engineering</div>
+                        <h3 class="card-title">2.4GHz Power Amplifier</h3>
+                        <p class="card-description">Designed a differential-to-single-ended output amplifier for 2.4 GHz BLE transmission, achieving high gain and low power consumption.</p>
+                        tags: ['Virtuoso', 'Differential Amplifier', 'Power Amplifier', 'BLE']
+                        <div class="card-tags">
+                            <span class="card-tag">Virtuoso</span>
+                            <span class="card-tag">Differential Amplifier</span>
+                            <span class="card-tag">Power Amplifier</span>
+                            <span class="card-tag">BLE</span>
+                        </div>
+                        <div class="card-arrow">→</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Software Projects -->
+            <div id="software" class="category-header">
+                <h3 class="category-title">Software</h3>
+            </div>
+            <div class="cards-list">
+                <div class="card-horizontal" onclick="openModal('sw3')">
+                    <div class="card-image" style="background: white;">
+                        <img src="../images/portfolio/dv_final.png" alt="Laundromat Convergence" style="width: 100%; height: 100%; object-fit: contain; padding: 20px;">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-category">Software</div>
+                        <h3 class="card-title">Laundromat Convergence</h3>
+                        <p class="card-description">Created a data visualization project exploring laundromat culture as a deeply rooted aspect of NYC life, transforming cleaned city datasets into interactive maps displayed at the Cooper Union Exhibition.</p>
+                        <div class="card-tags">
+                            <span class="card-tag">Python</span>
+                            <span class="card-tag">HTML</span>
+                            <span class="card-tag">Datasets</span>
+                            <span class="card-tag">Data Visualization</span>
+                            <span class="card-tag">Figma</span>
+                        </div>
+                        <div class="card-arrow">→</div>
+                    </div>
+                </div>
+                <div class="card-horizontal" onclick="openModal('sw2')">
+                    <div class="card-image" style="background: white;">
+                        <img src="../images/portfolio/energyDashboard.png" alt="Energy Dashboard" style="width: 100%; height: 100%; object-fit: contain; padding: 20px;">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-category">Software</div>
+                        <h3 class="card-title">Energy Dashboard</h3>
+                        <p class="card-description">Developed a real-time Energy Dashboard visualizing Cooper Union's energy and gas consumption, integrating PyTorch LTSM ML algorithms to predict future usage and carbon emissions.</p>
+                        <div class="card-tags">
+                            <span class="card-tag">Python</span>
+                            <span class="card-tag">NumPy</span>
+                            <span class="card-tag">PyTorch</span>
+                            <span class="card-tag">Data Visualization</span>
+                        </div>
+                        <div class="card-arrow">→</div>
+                    </div>
+                </div>
+                <div class="card-horizontal" onclick="openModal('sw1')">
+                    <div class="card-image" style="background: white;">
+                        <img src="../images/portfolio/diaryAppLogIn.png" alt="Diary App Log-In Page" style="width: 100%; height: 100%; object-fit: contain; padding: 20px;">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-category">Software</div>
+                        <h3 class="card-title">React Native Diary App</h3>
+                        <p class="card-description">Developed a React Native social app for sharing postcards and diaries with customizable backgrounds, photo attachments, and privacy settings using Google Firebase and Expo.</p>
+                        <div class="card-tags">
+                            <span class="card-tag">React Native</span>
+                            <span class="card-tag">Firebase</span>
+                            <span class="card-tag">Expo</span>
+                            <span class="card-tag">Mobile App</span>
+                            <span class="card-tag">Figma</span>
+                        </div>
+                        <div class="card-arrow">→</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hardware Projects -->
+            <div id="hardware" class="category-header">
+                <h3 class="category-title">Hardware</h3>
+            </div>
+            <div class="cards-list">
+                <div class="card-horizontal" onclick="openModal('hw4')">
+                    <div class="card-image" style="background: white;">
+                        <img src="../images/portfolio/hw4.png" alt="RV32I Chip Design" style="width: 100%; height: 100%; object-fit: contain; padding: 20px;">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-category">Hardware</div>
+                        <h3 class="card-title">RV32I Digital Chip Design</h3>
+                        <p class="card-description">Designed a TSMC 65nm digital chip in Verilog, meeting both minimum and maximum timing slack requirements.</p>
+                        <div class="card-tags">
+                            <span class="card-tag">Computer Architecture</span>
+                            <span class="card-tag">TSMC 65nm</span>
+                            <span class="card-tag">RISC-V Architecture</span>
+                            <span class="card-tag">Verilog</span>
+                        </div>
+                        <div class="card-arrow">→</div>
+                    </div>
+                </div>
+                <div class="card-horizontal" onclick="openModal('hw3')">
+                    <div class="card-image" style="background: white;">
+                        <img src="../images/portfolio/hw3.png" alt="MIPS 32bit Computer" style="width: 100%; height: 100%; object-fit: contain; padding: 20px;">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-category">Hardware</div>
+                        <h3 class="card-title">Custom 32-bit MIPS Computer</h3>
+                        <p class="card-description">Developed a 32-bit MIPS-based computer system in Verilog featuring custom instruction formats distinct from conventional architectures.</p>
+                        <div class="card-tags">
+                            <span class="card-tag">Verilog</span>
+                            <span class="card-tag">Computer Architecture</span>
+                            <span class="card-tag">MIPS Architecture</span>
+                        </div>
+                        <div class="card-arrow">→</div>
+                    </div>
+                </div>
+                <div class="card-horizontal" onclick="openModal('hw2')">
+                    <div class="card-image" style="background: white;">
+                        <img src="../images/portfolio/theremin.jpg" alt="Theremin" style="width: 100%; height: 100%; object-fit: contain; padding: 20px;">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-category">Hardware</div>
+                        <h3 class="card-title">Theremin</h3>
+                        <p class="card-description">Built a theremin from scratch, including oscillators, mixer, antennas, amplifier, and speaker for proximity-based pitch control.</p>
+                        <div class="card-tags">
+                            <span class="card-tag">Theremin</span>
+                            <span class="card-tag">Circuit Design</span>
+                        </div>
+                        <div class="card-arrow">→</div>
+                    </div>
+                </div>
+                <div class="card-horizontal" onclick="openModal('hw1')">
+                    <div class="card-image" style="background: white;">
+                        <img src="../images/portfolio/miniGameProject.png" alt="Mini-Game" style="width: 100%; height: 100%; object-fit: contain; padding: 20px;">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-category">Hardware</div>
+                        <h3 class="card-title">Analog Mini-Game</h3>
+                        <p class="card-description">I designed and implemented a system that allows users to control the horizontal movement of a descending light using a press switch.</p>
+                        <div class="card-tags">
+                            <span class="card-tag">Analog</span>
+                            <span class="card-tag">Circuit Design</span>
+                            <span class="card-tag">Game</span>
+                        </div>
+                        <div class="card-arrow">→</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- ASIC Projects -->
+            <div id="asic" class="category-header">
+                <h3 class="category-title">ASIC Design</h3>
+            </div>
+            <div class="cards-list">
+                <div class="card-horizontal" onclick="openModal('asic1')">
+                    <div class="card-image" style="background: white;">
+                        <img src="../images/portfolio/Thesis.jpg" alt="RISC-V RV32E based Microcontroller" style="width: 100%; height: 100%; object-fit: contain; padding: 20px;">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-category">ASIC Design</div>
+                        <h3 class="card-title">RISC-V RV32E based Microcontroller for Low Power IoT Devices</h3>
+                        <p class="card-description">I am designing a RISC-V 32E microcontroller unit (MCU) aimed at Zigbee sensor modules for smart home and smart city AI home servers. The project involves developing a comprehensive RTL implementation in Verilog, focusing on power-efficient design and real-time sensor interfacing.</p>
+                        <div class="card-tags">
+                            <span class="card-tag">RISC-V</span>
+                            <span class="card-tag">Zigbee</span>
+                            <span class="card-tag">microcontroller</span>
+                            <span class="card-tag">Power Management System</span>
+                            <span class="card-tag">TSMC 65nm</span>
+                            <span class="card-tag">Verilog</span>
+                            <span class="card-tag">IoT</span>
+                            <span class="card-tag">ASIC</span>
+                        </div>
+                        <div class="card-arrow">→</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- IoT Projects -->
+            <div id="iot" class="category-header">
+                <h3 class="category-title">IoT Systems</h3>
+            </div>
+            <div class="cards-list">
+                <div class="card-horizontal" onclick="openModal('iot2')">
+                    <div class="card-image" style="background: white;">
+                        <img src="../images/portfolio/avian_project.png" alt="Avian Project" style="width: 100%; height: 100%; object-fit: contain; padding: 20px;">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-category">IoT Systems</div>
+                        <h3 class="card-title">Avian Specification/Localization Project</h3>
+                        <p class="card-description">Designed a low-power portable acoustic sensing module that uses a tetrahedral microphone array and machine learning (BirdNET-Pi) to identify bird species and estimate their location, with real-time visualization via a mobile app.</p>
+                        <div class="card-tags">
+                            <span class="card-tag">BirdNET-Pi</span>
+                            <span class="card-tag">Zigbee</span>
+                            <span class="card-tag">Machine Learning</span>
+                            <span class="card-tag">IoT</span>
+                            <span class="card-tag">Audio Processing</span>
+                            <span class="card-tag">Raspberry Pi</span>
+                            <span class="card-tag">Localization</span>
+                            <span class="card-tag">React Native</span>
+                        </div>
+                        <div class="card-arrow">→</div>
+                    </div>
+                </div>
+            <div class="card-horizontal" onclick="openModal('iot1')">
+                    <div class="card-image" style="background: white;">
+                        <img src="../images/portfolio/robokitPic.png" alt="Robokit Project" style="width: 100%; height: 100%; object-fit: contain; padding: 20px;">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-category">IoT Systems</div>
+                        <h3 class="card-title">Robot Remote Control Via Wifi</h3>
+                        <p class="card-description">Developed an Arduino-based robot with Wifi connectivity and a front-facing proximity sensor for environment awareness.</p>
+                        <div class="card-tags">
+                            <span class="card-tag">Arduino</span>
+                            <span class="card-tag">Wifi</span>
+                            <span class="card-tag">Proximity Sensor</span>
+                            <span class="card-tag">Servo</span>
+                        </div>
+                        <div class="card-arrow">→</div>
+                    </div>
+                </div>
+            </div>
+
+             <!-- Other Projects -->
+            <div id="iot" class="category-header">
+                <h3 class="category-title">Others</h3>
+            </div>
+            <div class="cards-list">
+                <div class="card-horizontal" onclick="openModal('other1')">
+                    <div class="card-image" style="background: white;">
+                        <img src="../images/portfolio/windTurbineSimulation.png" alt="Wind Turbine Project" style="width: 100%; height: 100%; object-fit: contain; padding: 20px;">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-category">Others</div>
+                        <h3 class="card-title">Wind Turbine Attachment Model Design</h3>
+                        <p class="card-description">Developed and simulated a wind turbine enhancement structure using AutoCAD and SOLIDWORKS, achieving 70%+ improvement in energy generation.</p>
+                        <div class="card-tags">
+                            <span class="card-tag">3D Simulation</span>
+                            <span class="card-tag">Solidworks Flow Simulation</span>
+                            <span class="card-tag">3D CAD</span>
+                            <span class="card-tag">Bernoulli's Principle</span>
+                        </div>
+                        <div class="card-arrow">→</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+        <div class="modal" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="closeModal(event)">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="modal-image">
+                <img id="modalImage" src="" alt="Company Image">
+            </div>
+            <div class="modal-videos" id="modalVideosContainer" style="display: none;">
+                <div class="modal-videos-header">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="23 7 16 12 23 17 23 7"></polygon>
+                        <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+                    </svg>
+                    <span>Project Videos</span>
+                </div>
+                <div id="modalVideos" class="modal-videos-grid"></div>
+            </div>
+            <div class="modal-content">
+                <div class="modal-category" id="modalCategory">Category</div>
+                <h2 class="modal-title" id="modalTitle">Project Title</h2>
+                <p class="modal-description" id="modalDescription">Project description goes here.</p>
+                <div class="modal-details">
+                    <div class="modal-detail-row">
+                        <span class="modal-detail-label">Duration</span>
+                        <span class="modal-detail-value" id="modalDuration">—</span>
+                    </div>
+                    <div class="modal-detail-row">
+                        <span class="modal-detail-label">Role</span>
+                        <span class="modal-detail-value" id="modalRole">—</span>
+                    </div>
+                    <div class="modal-detail-row">
+                        <span class="modal-detail-label">Status</span>
+                        <span class="modal-detail-value" id="modalStatus">—</span>
+                    </div>
+                </div>
+                <div class="modal-pdf" id="modalPdfContainer" style="display: none; margin-bottom: 1.5rem;">
+                    <a id="modalPdfLink" href="" target="_blank" class="pdf-button">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="12" y1="18" x2="12" y2="12"></line>
+                            <line x1="9" y1="15" x2="15" y2="15"></line>
+                        </svg>
+                        View Project Report (PDF)
+                    </a>
+                </div>
+                <div class="modal-links" id="modalLinksContainer" style="display: none; margin-bottom: 1.5rem;">
+                    <div id="modalLinks" style="display: flex; flex-wrap: wrap; gap: 0.75rem;"></div>
+                </div>
+                <div class="modal-tags" id="modalTags"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-text">© 2025 Jonghyeok (Burt) Kim. Built with honesty and passion.</p>
+        </div>
+    </footer>
+
+    <script>
+        const projectData = {
+            rf1: {
+                category: 'RF Engineering',
+                title: 'Differential-to-Single Ended Amplifier Virtuoso Design',
+                image: '../images/portfolio/dif_to_single_results.png',
+                description: 'I designed a differential-to-single-ended output amplifier for BLE transmission operating at 2.4 GHz. The amplifier achieved 21.9 dB gain at DC, 12.4 dB gain at 2.4 GHz, a unity-gain frequency of 7.76 GHz, and power consumption of 313.68 µW.',
+                duration: '4 months',
+                role: 'Electronics II Student',
+                status: 'Completed',
+                tags: ['Virtuoso', 'Differential Amplifier', 'Power Amplifier', 'BLE'],
+                pdf: '../reports/dif_to_single_amp.pdf'
+            },
+            rf2: {
+                category: 'RF Engineering',
+                title: '0 - 20 MHz 41.2 dB Gain Operational Amplifier',
+                image: '../images/portfolio/41_2_opamp_results.png',
+                description: 'I designed a 41.2 dB operational amplifier with a 61.4° phase margin and a 5.1 GHz unity-gain frequency for integration into on-chip RF systems, including the LNA, transformer, mixer, oscillator, and external antenna interface. Using TSMC\'s 65 nm process libraries, I developed and constructed components across nine metal layers, achieving a synthesis- and timing-clean layout with zero DRC and LVS errors. This project demonstrated my strong analytical ability and precision in meeting rigorous performance and design specifications.',
+                duration: '4 months',
+                role: 'VLSI Student',
+                status: 'Completed',
+                tags: ['Virtuoso', 'Operational Amplifier', '65nm CMOS', 'VLSI Design'],
+                pdf: '../reports/41_2_opamp.pdf'
+            },
+            rf3: {
+                category: 'RF Engineering',
+                title: '12.4GHz QPSK Transceiver',
+                image: '../images/portfolio/transceiver_results.png',
+                description: 'The goal of this project was to design a wireless QPSK transceiver system, with a 12.4 GHz carrier, a 3 Gbps data rate (meaning a symbol rate of 1.5 GHz since QPSK symbols contain 2 bits), and transmission power of 11.5-14.5 dBm. To ensure reliability, sources of error such as noise or intermodulation products need to be limited. The receiver must have at least 30 dB SNR and 3.6 dB noise figure, while the outputs of both transmitter and receiver must have a 43 dB signal-to-spurious ratio.',
+                duration: '4 months',
+                role: 'Communication Electronics Student',
+                status: 'Completed',
+                tags: ['Transceiver', 'QPSK', 'System Design'],
+                pdf: '../reports/qpsktransceiver_report.pdf'
+            },
+            rf4: {
+                category: 'RF Engineering',
+                title: '16 QAM Transmitter',
+                image: '../images/portfolio/16QAM_results.png',
+                description: 'The vector modulator presented in this project was designed to support 16-QAM (Quadrature Amplitude Modulation) operation at a carrier frequency of 5.4 GHz. The required minimum double-sideband bandwidth was 1.8 GHz, corresponding to a symbol rate of 900 MHz, with four bits per symbol. Two bits control the phase state using 0°/180° modulation, while the remaining two bits determine the amplitude level. So in other words, two bits control the phase and two control the attenuation. The design requirements specified a maximum insertion loss of 8.5 dB and a maximum VSWR of 1.4:1 across the operating bandwidth. The resulting constellation was required to maintain a phase accuracy within ± 3.5° and an amplitude variation within ± 0.7 dB over the bandwidth. To meet these constraints, the entire design was implemented as a purely passive circuit, using Rogers 4003 substrate material for the transmission line.',
+                duration: '4 months',
+                role: 'Microwave Engineering Student',
+                status: 'Completed',
+                tags: ['Transmitter', '16 QAM', 'Microwave Engineering', 'Constellation', 'ADS'],
+                pdf: '../reports/16qam_report.pdf'
+            },
+            sw1: {
+                category: 'Software',
+                title: 'React Native Diary App',
+                image: '../images/portfolio/diaryAppLogIn.png',
+                description: 'I designed an application enabling user communication through postcards and diary sharing, utilizing Google Firebase Cloud API and Expo. Key features encompassed customizable backgrounds, attaching photos, search bars, friend requests, privacy settings, and universal post visibility [Developed using React Native]. Application design, front-end, and back-end were done by Burt Kim.',
+                duration: '3 months',
+                role: 'Solo Developer',
+                status: 'Completed',
+                tags: ['React Native', 'Firebase', 'Expo', 'Mobile App', 'Figma'],
+                videos: [
+                    { type: 'youtube', src: 'https://www.youtube.com/embed/IIHjzg5GZUY', title: 'Diary App Demo' }
+                ]
+            },
+            sw2: {
+                category: 'Software',
+                title: 'Energy Dashboard',
+                image: '../images/portfolio/energyDashboard.png',
+                description: 'I have conducted a comprehensive analysis of the energy and gas consumption across most areas of the Cooper Union building. Leveraging this data, I developed an Energy Dashboard that provides real-time visualization of energy usage from the Building Management System (BMS). Although I planned to integrate various machine learning algorithms to predict future energy consumption and carbon emission rates for the building, I could not proceed with this project because the contract between the school and the third-party company ended.',
+                duration: '1 year',
+                role: 'Software Engineering Intern',
+                status: 'Completed',
+                tags: ['Python', 'NumPy', 'PyTorch', 'Data Visualization']
+            },
+            sw3: {
+                category: 'Software',
+                title: 'Laundromat Convergence',
+                image: '../images/portfolio/dv_final.png',
+                description: 'This project illustrates how the laundromat business has become a deeply rooted part of New York City\'s culture. By weaving together census demographics, water-complaint distribution, laundromat business distribution, and a heatmap of total assessed property values, it shows how laundromats have continued to thrive and remain essential in densely populated neighborhoods in NYC, despite the city\'s consistent water challenges.',
+                duration: '4 months',
+                role: 'Solo Developer',
+                status: 'Completed',
+                tags: ['Python', 'HTML', 'Datasets', 'Data Visualization', 'Figma'],
+                pdf: '../reports/dv_final_report.pdf',
+                links: [
+                    { label: 'Website', url: 'https://burtkim-ust.github.io/my-folder/laundromat-prototype2/' }
+                ]
+            },
+            hw1: {
+                category: 'Hardware',
+                title: 'Mini-Game',
+                image: '../images/portfolio/miniGameProject.png',
+                description: 'This project involved designing and building an LED collision game on a 4x5 LED matrix using digital logic components. The game mechanics required an LED to move downward automatically via 555 timer clock pulses while the player controls left-to-right movement using a push button, with the goal of colliding with a target LED in the bottom row. The circuit utilized CD4029 counters for down movement and target LED generation, CD4013 D flip-flops for horizontal stepping, and CD4051 demultiplexers for LED row selection. Two implementations were created: a base packet by Dan Brody and an upgraded packet with collision detection by Jonghyeok Kim, with total costs of $16.11 and $17.33 respectively. The design process included creating state diagrams, truth tables, and Karnaugh maps, followed by Logisim simulations before hardware implementation. Both circuits were successfully built on breadboards, with empirical results matching the theoretical simulations. The main challenges encountered were switch debouncing and floating input/output issues, which were resolved through troubleshooting with digital multimeters. The project provided valuable hands-on experience with multiplexers, demultiplexers, 555 timers, and push button interfacing in a digital logic context.',
+                duration: '4 months',
+                role: 'Digital Logic Design Student',
+                status: 'Completed',
+                tags: ['Analog', 'Circuit Design', 'Game'],
+                pdf: '../reports/minigame_report.pdf',
+                videos: [
+                    { type: 'youtube', src: 'https://www.youtube.com/embed/xcsMpBHcq68', title: 'Mini-Game Demo' }
+                ]
+            },
+            hw2: {
+                category: 'Hardware',
+                title: 'Theremin Design',
+                image: '../images/portfolio/thereminPic.png',
+                description: 'This project involved building a miniature theremin, an electronic musical instrument that controls pitch through hand proximity to an antenna. The circuit consisted of six major building blocks: a pitch antenna with inductors, two LM311 comparator-based oscillators that generate a beat frequency when combined, an envelope detector for amplitude modulation, a non-inverting amplifier with variable gain for volume control, an active low-pass filter with a 7.5 kHz cutoff frequency, and a speaker driven by a prebuilt audio amplifier. The pitch mechanism works by connecting the antenna in parallel with one oscillator\'s capacitor, so hand proximity changes the capacitance and shifts the oscillator frequency, creating an audible beat frequency difference between the two oscillators. The completed theremin successfully produced sound with over an octave range of playable notes. Testing verified that each component functioned as designed: the oscillators synchronized at rest to produce 0 Hz beat frequency, the buffer isolated circuit stages, the envelope detector smoothly followed signal peaks, and the amplifier provided adjustable gain for volume control. The project required periodic "re-tuning" via potentiometer adjustments to maintain optimal playing range, as the frequency response varied between trials. Overall, the project provided hands-on experience with oscillators, filters, envelope detection, and amplification in the context of building a functional musical instrument.',
+                duration: '4 months',
+                role: 'Sophomore Project Student',
+                status: 'Completed',
+                tags: ['Theremin', 'Circuit Design'],
+                pdf: '../reports/theremin_report.pdf',
+                videos: [
+                    { type: 'youtube', src: 'https://www.youtube.com/embed/lZ2HTTFPI1c', title: 'Theremin Demo' }
+                ]
+            },
+            hw3: {
+                category: 'Hardware',
+                title: '32-bit MIPS Computer Design',
+                image: '../images/portfolio/mips.png',
+                description: 'This project involved designing and simulating a custom 32-bit MIPS-based RISC computer with unique instruction formats. The architecture features three instruction types (R, I, and J) with modified bit allocations: R-type uses 7-bit fields for registers (rs, rt, rd) and 5 bits for shift amount, I-type includes a 12-bit immediate field, and J-type provides a 26-bit address field. The opcode\'s first two bits determine the instruction type (00 for R/J-type, 01 for I-type), with the remaining four bits serving as the function code. This design enables 7-bit register addressing, supporting up to 128 registers including special-purpose registers for Hi/Lo, arguments, temporaries, saved values, and system pointers. The computer\'s functionality was validated through three testbenches: a Fibonacci function that correctly computed the 10th Fibonacci number (89), a leaf procedure demonstrating a simple for-loop incrementing a counter until it matched a target value, and a nested procedure testing stack operations with proper return address handling using stack pointer manipulation and jump-and-link instructions. The nested procedure test verified correct stack frame management, including saving and restoring return addresses when calling inner procedures and executing system calls to print integers.',
+                duration: '4 months',
+                role: 'Computer Architecture Student',
+                status: 'Completed',
+                tags: ['Verilog', 'Computer Architecture', 'MIPS Architecture'],
+                links: [
+                    { label: 'Github', url: 'https://github.com/cooper-union-ece-251-marano/final-project-ece-251-spring-2024-boomboom' }
+                ]
+            },
+            hw4: {
+                category: 'Hardware',
+                title: '32-bit RV32I CPU Chip Design',
+                image: '../images/portfolio/rv32.png',
+                description: 'This project involved designing a RISC-V multi-cycle microprocessor by implementing the Controller and Datapath components in Verilog. Unlike single-cycle processors that execute each instruction in one clock cycle, the multi-cycle architecture breaks instruction execution into multiple stages, allowing hardware resources to be reused across different phases and enabling more efficient operation. The design followed the multi-cycle RISC-V processor architecture and finite state machine (FSM) specifications provided in class materials, with the instruction and data memory already defined in a provided module (instr_data_mem.v). The Controller was implemented as a finite state machine that sequences through different states for each instruction phase: instruction fetch, decode, execute, memory access, and write-back. Depending on the instruction type, the FSM generates appropriate control signals to coordinate the Datapath operations, such as register reads/writes, ALU operations, and memory accesses. The Datapath was designed to include the program counter, register file, ALU, and necessary multiplexers and registers to hold intermediate values between cycles, all interconnected according to the multi-cycle RISC-V processor schematic. The processor was validated using a provided test sequence (riscvtest.txt) containing 32-bit binary instructions, with corresponding assembly code (riscvtest.s) available for reference. The testbench (top_testbench.v) loaded these instructions into memory and simulated the processor\'s execution, verifying that the Controller\'s FSM correctly transitioned through states and that the Datapath properly executed each instruction. Successful simulation demonstrated correct instruction decoding, arithmetic and logic operations, memory load/store functionality, and control flow handling, confirming the multi-cycle microprocessor operated as designed.',
+                duration: '4 months',
+                role: 'Digital VLSI Student',
+                status: 'Completed',
+                tags: ['Computer Architecture', 'TSMC 65nm', 'RISC-V Architecture', 'Verilog']
+            },
+            asic1: {
+                category: 'ASIC Design',
+                title: 'RISC-V RV32E based Microcontroller for Low Power IoT Devices',
+                image: '../images/portfolio/rv32.png',
+                description: 'I developed a custom RISC-V chip based on the open-source PicoRV32 core, incorporating a modified CPU core, power management system, GPIO controller, and SRAM. Further details are restricted as this research project is ongoing.',
+                duration: '1 year',
+                role: 'Master\'s Thesis Student',
+                status: 'Progress',
+                tags: ['RISC-V', 'Zigbee', 'microcontroller', 'Power Management System', 'TSMC 65nm', 'Verilog', 'IoT', 'ASIC']
+            },
+            iot1: {
+                category: 'IoT Systems',
+                title: 'Robot Remote Control Via Wifi',
+                image: '../images/portfolio/robokitPic.png',
+                description: 'I developed an Arduino-based mobile robot featuring integrated Wi-Fi connectivity for wireless communication and remote control. The robot is equipped with a front-facing ultrasonic distance sensor that accurately measures proximity to obstacles, enabling real-time environment awareness and collision avoidance. A custom laptop-based graphical user interface allows operators to control the robot remotely through intuitive button commands, supporting omnidirectional movement including forward, backward, and lateral directions. The Wi-Fi module establishes a reliable connection between the robot and the control interface, enabling seamless wireless operation.',
+                duration: '4 months',
+                role: 'EID 101 Student',
+                status: 'Completed',
+                tags: ['Arduino', 'Wifi', 'Proximity Sensor', 'Servo'],
+                videos: [
+                    { type: 'youtube', src: 'https://www.youtube.com/embed/dRjoN5F3ecw', title: 'Robot Demo' }
+                ]
+            },
+            iot2: {
+                category: 'IoT Systems',
+                title: 'Avian Specification/Localization Project',
+                image: '../images/portfolio/avian_project.png',
+                description: 'This project designed a low-power, portable acoustic sensing module that combines machine learning and audio processing to automatically identify bird species and estimate their locations. The system captures bird vocalizations (100 Hz to 10 kHz) using a custom tetrahedral microphone array designed to satisfy spatial Nyquist constraints for accurate localization. Direction of arrival (DOA) estimation is performed using time difference of arrival (TDOA) measurements via the Generalized Cross Correlation with Phase Transform (GCC-PHAT) algorithm, which provides robustness against environmental noise and amplitude variability in outdoor environments. Species identification is achieved using BirdNET-Pi, which converts bird audio into spectrogram representations and applies a convolutional neural network for classification. The localization and classification outputs are fused and transmitted to a mobile application, providing real-time visualization of detected species along with their approximate azimuth and elevation. This dual-functionality system addresses limitations in existing citizen science approaches by offering both species identification and spatial estimation, making it a practical tool for conservationists and hobbyist birdwatchers seeking enhanced situational awareness in the field.',
+                duration: '4 months',
+                role: 'Embedded Engineer',
+                status: 'Progress',
+                tags: ['BirdNET-Pi', 'Machine Learning', 'IoT', 'Audio Processing', 'Raspberry Pi', 'Localization', 'React Native'],
+                pdf: '../reports/avian_report.pdf'
+            },
+            other1: {
+                category: 'Others',
+                title: 'Wind Turbine Attachment Model Design',
+                image: '../images/portfolio/windTurbineSimulation.png',
+                description: 'This research project aimed to improve wind turbine efficiency by designing "wind power density compressors" that increase wind velocity at the turbine blades using Bernoulli\'s principle. Since wind power density is proportional to air density and the cube of wind velocity (δ = ½ρV³), even small increases in wind speed can significantly boost energy generation. The team designed seven 3D models in AutoCAD and validated them using SOLIDWORKS Flow Simulation: three funnel-shaped designs (One-1, 2, 3) for horizontal-axis wind turbines (HAWTs) that capture wind from one direction, and four hourglass-shaped designs (All-1, 2, 3, 4) for vertical-axis wind turbines (VAWTs) that work with wind from any direction. Simulation results demonstrated significant wind velocity increases at the narrowest sections of the compressors. Model One-3 achieved approximately 75% increase in wind speed for HAWTs, while Model All-4 showed an 18% increase for VAWTs. The study identified key design factors for maximizing efficiency: increasing the overall model height, decreasing the height of the narrowest section, and increasing the radius of the inlet surfaces. Additional simulations confirmed that air density also increases at the narrow section, further enhancing wind power density. Based on these results, the researchers estimate potential energy generation improvements of approximately 5 times for HAWTs and 1.7 times for VAWTs when using optimized compressor designs.',
+                duration: '4 months',
+                role: 'Smart Cities Team Leader',
+                status: 'Completed',
+                tags: ['3D CAD', 'Solidworks Flow Simulation', 'Bernoulli\'s Principle', 'Wind Turbine'],
+                pdf: '../reports/windturbine_report.pdf',
+                videos: [
+                    { type: 'youtube', src: 'https://www.youtube.com/embed/Xya-h9nSnFg', title: 'Wind Turbine Attachment Model Demo' }
+                ]
+            }
+        };
+
+        function openModal(projectId) {
+            const data = projectData[projectId];
+            if (!data) return;
+            document.getElementById('modalImage').src = data.image || '';
+            document.getElementById('modalCategory').textContent = data.category;
+            document.getElementById('modalTitle').textContent = data.title;
+            document.getElementById('modalDescription').textContent = data.description;
+            document.getElementById('modalDuration').textContent = data.duration;
+            document.getElementById('modalRole').textContent = data.role;
+            document.getElementById('modalStatus').textContent = data.status;
+
+            // Handle Videos
+            const videosContainer = document.getElementById('modalVideosContainer');
+            const videosDiv = document.getElementById('modalVideos');
+            videosDiv.innerHTML = '';
+            
+            if (data.videos && data.videos.length > 0) {
+                videosContainer.style.display = 'block';
+                
+                if (data.videos.length === 1) {
+                    videosDiv.classList.add('single-video');
+                } else {
+                    videosDiv.classList.remove('single-video');
+                }
+                
+                data.videos.forEach(video => {
+                    const videoHTML = createVideoElement(video);
+                    videosDiv.innerHTML += videoHTML;
+                });
+            } else {
+                videosContainer.style.display = 'none';
+            }
+
+            // Handle Links (THIS WAS MISSING - declaring the variables)
+            const linksContainer = document.getElementById('modalLinksContainer');
+            const linksDiv = document.getElementById('modalLinks');
+            linksDiv.innerHTML = '';
+            
+            let hasLinks = false;
+
+            // Add PDF button if exists
+            if (data.pdf) {
+                hasLinks = true;
+                linksDiv.innerHTML += `
+                    <a href="${data.pdf}" target="_blank" class="modal-link-btn pdf">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                        </svg>
+                        View PDF Report
+                    </a>
+                `;
+            }
+
+            // Add external links if exist
+            if (data.links && data.links.length > 0) {
+                hasLinks = true;
+                data.links.forEach(link => {
+                    const btnClass = getLinkButtonClass(link.label);
+                    const icon = getLinkIcon(link.label);
+                    linksDiv.innerHTML += `
+                        <a href="${link.url}" target="_blank" class="modal-link-btn ${btnClass}">
+                            ${icon}
+                            ${link.label}
+                        </a>
+                    `;
+                });
+            }
+
+            linksContainer.style.display = hasLinks ? 'block' : 'none';
+
+            // Handle tags
+            const tagsContainer = document.getElementById('modalTags');
+            tagsContainer.innerHTML = data.tags.map(tag => `<span class="modal-tag">${tag}</span>`).join('');
+
+            document.getElementById('modalOverlay').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(event) {
+            if (event.target.id === 'modalOverlay' || event.currentTarget.classList.contains('modal-close')) {
+                document.getElementById('modalOverlay').classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
+
+        function getLinkButtonClass(label) {
+            const lower = label.toLowerCase();
+            if (lower.includes('github')) return 'github';
+            if (lower.includes('demo') || lower.includes('live')) return 'demo';
+            if (lower.includes('website') || lower.includes('site')) return 'website';
+            return 'website';
+        }
+
+        function getLinkIcon(label) {
+            const lower = label.toLowerCase();
+            if (lower.includes('github')) {
+                return `<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>`;
+            }
+            if (lower.includes('demo') || lower.includes('live')) {
+                return `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polygon points="10 8 16 12 10 16 10 8"></polygon>
+                </svg>`;
+            }
+            return `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+            </svg>`;
+        }
+
+        function getYouTubeId(url) {
+            const patterns = [
+                /(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([^&\?\/]+)/,
+                /^([a-zA-Z0-9_-]{11})$/
+            ];
+            for (const pattern of patterns) {
+                const match = url.match(pattern);
+                if (match) return match[1];
+            }
+            return url;
+        }
+
+        function getVimeoId(url) {
+            const patterns = [
+                /vimeo\.com\/(\d+)/,
+                /player\.vimeo\.com\/video\/(\d+)/,
+                /^(\d+)$/
+            ];
+            for (const pattern of patterns) {
+                const match = url.match(pattern);
+                if (match) return match[1];
+            }
+            return url;
+        }
+
+        function createVideoElement(video) {
+            let videoContent = '';
+            
+            if (video.type === 'youtube') {
+                const videoId = getYouTubeId(video.src || video.id);
+                videoContent = `
+                    <div class="video-container">
+                        <iframe 
+                            width="680" 
+                            height="383" 
+                            src="https://www.youtube.com/embed/${videoId}" 
+                            title="${video.title || 'Video'}"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                `;
+            }
+            
+            return `
+                <div class="video-wrapper">
+                    ${videoContent}
+                    ${video.title ? `<div class="video-title">${video.title}</div>` : ''}
+                </div>
+            `;
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                document.getElementById('modalOverlay').classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+    </script>
+</body>
+</html>

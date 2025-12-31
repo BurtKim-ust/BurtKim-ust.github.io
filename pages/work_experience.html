@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work Experience - Engineering Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="../index.html" class="navbar-brand">
+                <span>Jonghyeok (Burt) Kim</span>
+            </a>
+            <ul class="navbar-nav">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="about_me.html">About</a></li>
+                <li><a href="work_experience.html" class="active">Experience</a></li>
+                <li><a href="goals_vision.html">Goals</a></li>
+                <li><a href="personal_projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1 class="page-title">Work Experience</h1>
+            <p class="page-subtitle">My professional journey through hardware and software engineering roles.</p>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="container">
+            <div class="cards-list">
+                <!-- Top Card -->
+                <div class="card-horizontal" onclick="openModal('exp4')">
+                    <div class="card-image">
+                        <img src="../images/companies_logo/lge.png" alt="LG Electronics Logo">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-category">June - August 2025</div>
+                        <h3 class="card-title">Embedded Engineering Intern</h3>
+                        <p class="card-description">Implemented C firmware to drive multiple OLED display screens for LG smart dryers, interfacing with the mainboard and a rotary encoder (spin dial) for mode selection. Recognized as Best LGE Intern (Summer 2025) for high-impact platform contributions.</p>
+                        <div class="card-tags">
+                            <span class="card-tag">C</span>
+                            <span class="card-tag">Python</span>
+                            <span class="card-tag">Linux</span>
+                            <span class="card-tag">Embedded Systems</span>
+                            <span class="card-tag">Firmware Debugging</span>
+                            <span class="card-tag">Automation</span>
+                            <span class="card-tag">Solder</span>
+                        </div>
+                        <div class="card-arrow">→</div>
+                    </div>
+                </div>
+
+                <div class="card-horizontal" onclick="openModal('exp3')">
+                    <div class="card-image">
+                        <img src="../images/companies_logo/kiau.jpeg" alt="Kiau Tech Logo">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-category">September 2023 - April 2025</div>
+                        <h3 class="card-title">Founding Embedded Systems Engineer</h3>
+                        <p class="card-description">Designed and built LoRaWAN-based smart farm hardware using ESP32, Raspberry Pi, and custom PCBs, improving data transmission reliability through RF optimization techniques. Led end-to-end hardware development from prototyping to validation.</p>
+                        <div class="card-tags">
+                            <span class="card-tag">LoRaWAN</span>
+                            <span class="card-tag">ESP32</span>
+                            <span class="card-tag">PCB Design</span>
+                            <span class="card-tag">Raspberry Pi</span>
+                            <span class="card-tag">Arduino</span>
+                            <span class="card-tag">RF Systems</span>
+                        </div>
+                        <div class="card-arrow">→</div>
+                    </div>
+                </div>
+                
+                <div class="card-horizontal" onclick="openModal('exp2')">
+                    <div class="card-image">
+                        <img src="../images/companies_logo/cooper_union.png" alt="Kiau Tech Logo">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-category">June 2024 - April 2025</div>
+                        <h3 class="card-title">Energy Dashboard Intern</h3>
+                        <p class="card-description">Designed and implemented a real-time energy monitoring dashboard using OSI PI and Python, incorporating machine learning to analyze 15+ data points and visualize historical trends for building energy management.</p>
+                        <div class="card-tags">
+                            <span class="card-tag">Python</span>
+                            <span class="card-tag">OSI PI</span>
+                            <span class="card-tag">Data Visualization</span>
+                            <span class="card-tag">Machine Learning</span>
+                            <span class="card-tag">Energy Management</span>
+                        </div>
+                        <div class="card-arrow">→</div>
+                    </div>
+                </div>
+
+                <div class="card-horizontal" onclick="openModal('exp1')">
+                    <!-- How to fit an image correctly-->
+                    <div class="card-image" style="background: white;">
+                        <img src="../images/companies_logo/roka.jpg" alt="Kiau Tech Logo" style="width: 100%; height: 100%; object-fit: contain; padding: 20px;">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-category">September 2021 - March 2023</div>
+                        <h3 class="card-title">Signaller (Sergeant)</h3>
+                        <p class="card-description">Led a 10-member squad in maintaining military communication equipment, ensuring operational readiness and efficient signal operations.</p>
+                        <div class="card-tags">
+                            <span class="card-tag">PRC-999K</span>
+                            <span class="card-tag">AS-992K</span>
+                            <span class="card-tag">Communication Systems</span>
+                            <span class="card-tag">Team Leadership</span>
+                            <span class="card-tag">Technical Documentation</span>
+                            <span class="card-tag">Validation</span>
+                            <span class="card-tag">Solder</span>
+                        </div>
+                        <div class="card-arrow">→</div>
+                    </div>
+                </div>
+                <!-- Bottom Card -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+        <div class="modal" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="closeModal(event)">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="modal-image">
+                <img id="modalImage" src="" alt="Company Image">
+            </div>
+            <div class="modal-content">
+                <div class="modal-category" id="modalCategory">Category</div>
+                <h2 class="modal-title" id="modalTitle">Position Title</h2>
+                <p class="modal-description" id="modalDescription">Description goes here.</p>
+                <div class="modal-details">
+                    <div class="modal-detail-row">
+                        <span class="modal-detail-label">Duration</span>
+                        <span class="modal-detail-value" id="modalDuration">—</span>
+                    </div>
+                    <div class="modal-detail-row">
+                        <span class="modal-detail-label">Role</span>
+                        <span class="modal-detail-value" id="modalRole">—</span>
+                    </div>
+                    <div class="modal-detail-row">
+                        <span class="modal-detail-label">Status</span>
+                        <span class="modal-detail-value" id="modalStatus">—</span>
+                    </div>
+                </div>
+                <div class="modal-tags" id="modalTags"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-text">© 2025 Jonghyeok (Burt) Kim. Built with honesty and passion.</p>
+        </div>
+    </footer>
+
+    <script>
+        const experienceData = {
+            // Bottom Card
+            exp1: {
+                category: 'Work Experience',
+                title: 'Republic of Kore Signaller (Sergeant)',
+                image: '../images/portfolio/rf_equipments.jpg',
+                description: `Led a squad of 10 soldiers in managing and troubleshooting military communication systems, ensuring operational efficiency and mission success. Responsibilities included maintaining and operating short- and long-range wireless communication devices such as the PRC-999K and AS-992K to enable secure and reliable communications in the field. Additionally, I meticulously tracked progress and documented technical operations to support operational reviews and continuous improvement. I also assembled wiring and components to ensure reliable power supply for military radio devices.`,
+                duration: 'September 2021 - March 2023',
+                role: 'Signaller',
+                status: 'Completed',
+                tags: ['PRC-999K', 'AS-992K', 'Communication Systems', 'Team Leadership', 'Technical Documentation', 'Validation', 'Solder']
+            },
+            exp2: {
+                category: 'Work Experience',
+                title: 'Cooper Union Energy Dashboard Intern',
+                image: '../images/portfolio/energyDashboard.png',
+                description: `Collaborated with cross-functional teams to analyze energy consumption data and develop strategies for carbon emission reduction across Cooper Union buildings. I led the design and implementation of an interactive dashboard using OSI PI, Python, and machine learning algorithms to present real-time energy metrics and historical trends across 15+ data points. This data visualization tool enabled stakeholders to identify inefficiencies and implement targeted strategies for reducing the building's carbon footprint.`,
+                duration: 'May 2024 - April 2025',
+                role: 'Software Engineer Intern',
+                status: 'Completed',
+                tags: ['Python', 'OSI PI', 'Data Visualization', 'Machine Learning', 'Energy Management']
+            },
+            exp3: {
+                category: 'Work Experience',
+                title: 'Kiau Technologies PBC Founding Embedded Systems Engineer',
+                image: '../images/portfolio/mudbugRaspberry1.png',
+                description: `Designed and built LoRaWAN-based smart farm hardware systems using Raspberry Pi, Arduino, ESP32, and RFM LoRa chips as part of a cross-functional team focused on seamless data collection and transmission. I improved data transmission reliability by applying RF optimization techniques including impedance matching, filtering, and efficient transmission structures. I also designed the PCB layout for the mothership module, integrating ESP32, MicroSD card holder, and LoRa RF chips to achieve maximum functionality at minimal cost. All hardware systems were rigorously tested, debugged, and validated using oscilloscopes and multimeters.`,
+                duration: 'September 2023 - April 2025',
+                role: 'Founding Embedded Systems Engineer',
+                status: 'Completed',
+                tags: ['LoRaWAN', 'ESP32', 'PCB Design', 'Raspberry Pi', 'Arduino', 'RF Systems']
+            },
+            exp4: {
+                category: 'Work Experience',
+                title: 'LG Electronics Embedded Software Engineer Intern',
+                image: '../images/portfolio/LGE_Intern.jpg',
+                description: `During my internship at LG Electronics, I was recognized as Best LGE Intern for Summer 2025 due to my high-impact contributions to the embedded platform team. My primary focus was developing and integrating embedded OS components within a Linux environment using C and Python, which enabled over-the-air updates and remote control capabilities across multiple subsystems including LCD, OSP, mainboard, and Wi-Fi modules in LG's smart home electronics. I worked closely with Quality Engineering and Assurance teams to define functional requirements and refine the system design for LG ThinQ AI-enabled smart dryers. When firmware defects arose in the EU models of the LG Smart Dryer, I diagnosed and resolved the issues using internal UART debugging tools that parsed error logs from C source files, which significantly improved stability across both regression and field-test builds. I also took initiative to upgrade a Python-based multilingual synchronization tool by automating previously manual localization workflows, which reduced development turnaround time and enhanced translation consistency for international product releases.`,
+                duration: 'June 2025 - August 2025',
+                role: 'Embedded Software Engineer Intern',
+                status: 'Completed',
+                tags: ['C', 'Python', 'Linux', 'Embedded Systems', 'Firmware Debugging', 'Automation', 'Solder']
+            }
+            // Top Card
+        };
+
+        function openModal(expId) {
+            const data = experienceData[expId];
+            if (!data) return;
+            document.getElementById('modalImage').src = data.image;
+            document.getElementById('modalCategory').textContent = data.category;
+            document.getElementById('modalTitle').textContent = data.title;
+            document.getElementById('modalDescription').textContent = data.description;
+            document.getElementById('modalDuration').textContent = data.duration;
+            document.getElementById('modalRole').textContent = data.role;
+            document.getElementById('modalStatus').textContent = data.status;
+
+            const tagsContainer = document.getElementById('modalTags');
+            tagsContainer.innerHTML = data.tags.map(tag => `<span class="modal-tag">${tag}</span>`).join('');
+
+            document.getElementById('modalOverlay').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(event) {
+            if (event.target.id === 'modalOverlay' || event.currentTarget.classList.contains('modal-close')) {
+                document.getElementById('modalOverlay').classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                document.getElementById('modalOverlay').classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+    </script>
+</body>
+</html>
